@@ -5,6 +5,7 @@ import BubblyBlock from "components/small/BubblyBlock"
 import { useState } from "react"
 import Modal from "react-modal"
 import PharmaPortalProject from "components/projects/PharmaPortal"
+import BrutePrimes from "components/projects/BrutePrimes"
 
 let ModalShorthand = ({text, modalContent}) => {
     let [isOpen, setIsOpen] = useState(false)
@@ -32,12 +33,13 @@ let IndexPage = (props) => {
             </style>
 
             <BubblyBlock className="-mt-0 text-3xl leading-hard mx-16 !p-8">
-                Developer from Australia 🇦🇺 
-                I love and focus on leverage and simplicity. By ensuring simplicity, leverage can be maximised.
+                Software Engineer from Australia 🇦🇺  <br/>
+                I love and focus on leverage and simplicity. <br />
+                By ensuring simplicity, leverage can be maximised.
                 
                 <hr className="my-4" />
                 
-                My dev socials:
+                My socials:
                 <div className="grid grid-cols-3 text-center text-lg my-4 shadow-xl">  
                     <a 
                         href="https://www.linkedin.com/in/jackhales/" 
@@ -50,15 +52,15 @@ let IndexPage = (props) => {
                     <a 
                         href="https://stackoverflow.com/users/5782416/jack-hales" 
                         target="_stackoverflow" 
-                        className="text-white p-4"
-                        style={{ background: "#f7a664" }}
+                        className="text-white p-4 bg-yellow-500"
                     >
                         Stack Overflow
                     </a>
                     <a 
                         href="https://github.com/halesyy/" 
                         target="_github"
-                        className="bg-black text-white p-4 rounded-r-lg"
+                        // className="bg-black text-white p-4 rounded-r-lg"
+                        className="bg-green-400 text-white p-4 rounded-r-lg"
                     >
                         GitHub
                     </a>
@@ -70,7 +72,7 @@ let IndexPage = (props) => {
                     Interests:
                     <ul className="ml-14">
                         <li>Bush walks 🥾</li>
-                        <li>Music 🎸, 🥁, 🎹</li>
+                        <li>Music 🎸 🥁 🎹</li>
                         <li>History 📜</li>
                         <li>Languages 🇮🇹</li>
                     </ul>
@@ -84,12 +86,10 @@ let IndexPage = (props) => {
                         <li>Python, Flask</li>
                         <li>JavaScript, React, Node</li>
                         <li>Rust</li>
-                        <li className="text-sm text-gray-300 -ml-1">
-                            <div className="pl-1">
-                                MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind, joke's over.
-                            </div>
-                        </li>
                     </ul>
+                    <div className="text-base mt-2 text-gray-400">
+                        (MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind.)
+                    </div>
                 </div>
 
                 <hr className="mt-6 mb-4" />
@@ -98,10 +98,10 @@ let IndexPage = (props) => {
                     Projects of Interest:
                     <ul className="ml-14">
                         <li><ModalShorthand text="Pharma Portal" modalContent={<PharmaPortalProject />} /></li>
-                        <li>Logistics Mappings</li>
+                        <li>Logistics Mapping</li>
                         <li>Universal</li>
                         <li>Market</li>
-                        <li>Brute-forcing Primes</li>
+                        <li><ModalShorthand text="Brute-forcing Primes" modalContent={<BrutePrimes />} /></li>
                     </ul>
                 </div>
 

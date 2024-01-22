@@ -8,7 +8,6 @@ const Header = (props) => {
    return (
       <>
          <div className={classnames(
-            "flex flex-col lg:flex-row items-center bg-gray-100 text-black p-4 text-2xl border-b border-gray-300",
             "m-4 rounded-xl"
          )}>
             <div className="">

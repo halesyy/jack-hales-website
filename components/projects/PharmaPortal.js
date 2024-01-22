@@ -4,7 +4,7 @@ import Title from "components/small/Title"
 let PharmaPortalProject = (props) => {
    return (
       <div> 
-         <Title className="mt-0">Pharma Portal</Title>
+         <Title className="mt-4">Pharma Portal</Title>
          <p>
             Pharma Portal (PP) is an end-to-end web app focussed on solving problems
             in the Australian Pharmaceutical space for pharmacies, suppliers, groups,
