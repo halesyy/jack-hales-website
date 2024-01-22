@@ -2,6 +2,21 @@ import Head from "next/head"
 import Block from "components/small/Block"
 import { SmallContainer } from "components/medium/Container"
 import BubblyBlock from "components/small/BubblyBlock"
+import { useState } from "react"
+import Modal from "react-modal"
+import PharmaPortalProject from "components/projects/PharmaPortal"
+
+let ModalShorthand = ({text, modalContent}) => {
+    let [isOpen, setIsOpen] = useState(false)
+    return (
+        <> 
+            <span className="underline cursor-pointer hover:text-blue-500" onClick={() => setIsOpen(true)}>{text}</span>
+            <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+                {modalContent}
+            </Modal>        
+        </>
+    )
+}
 
 let IndexPage = (props) => {
     return (
@@ -15,19 +30,6 @@ let IndexPage = (props) => {
                     // background: linear-gradient(157deg, rgba(99,136,255,1) 0%, rgba(117,150,255,1) 100%); 
                 }`}
             </style>
-            {/* <div className="grid grid-cols-1 lg:grid-cols-2">
-                <BubblyBlock className="m-4 -mt-4 lg:mr-0 shadow">
-                    <div className="text-gray-400">Socials</div>
-                    
-                </BubblyBlock>
-                <BubblyBlock className="m-4 lg:ml-0 -mt-4 shadow">
-                    <div className="text-gray-400">Websites</div>
-                    <a href="https://pharmaportal.com.au" target="_pharmaportal" className="mr-3">
-                        Pharma Portal
-                    </a>
-                </BubblyBlock>
-
-            </div> */}
 
             <BubblyBlock className="-mt-0 text-3xl leading-hard mx-16 !p-8">
                 Developer from Australia 🇦🇺 
@@ -87,6 +89,19 @@ let IndexPage = (props) => {
                                 MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind, joke's over.
                             </div>
                         </li>
+                    </ul>
+                </div>
+
+                <hr className="mt-6 mb-4" />
+
+                <div>
+                    Projects of Interest:
+                    <ul className="ml-14">
+                        <li><ModalShorthand text="Pharma Portal" modalContent={<PharmaPortalProject />} /></li>
+                        <li>Logistics Mappings</li>
+                        <li>Universal</li>
+                        <li>Market</li>
+                        <li>Brute-forcing Primes</li>
                     </ul>
                 </div>
 

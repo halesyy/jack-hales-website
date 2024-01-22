@@ -16,17 +16,22 @@ ol li, ul li {
 
 /* Custom break-point Tailwind overrides. */
 
+p {
+  @apply text-xl pb-6;
+}
+
 .react-tooltip {
   z-index: 10;
 }
 
 .ReactModal__Overlay {
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(0, 0, 0, 0.4) !important;
 }
 .ReactModal__Content {
-  @apply rounded-md shadow;
+  @apply rounded-md shadow-xl;
   @apply lg:w-3/5 mx-auto;
   @apply !inset-2;
+  @apply !border-0;
   @apply h-[80vh] lg:h-[70vh] my-auto;
   overflow-y: scroll;
   @apply relative;
