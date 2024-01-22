@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "calls": [
+        "shorthand/calls"
+      ],
+      "local": [
+        "shorthand/local"
+      ],
+      "fetchHooks": [
+        "shorthand/fetchHooks"
+      ],
+      "database": [
+        "lib/database"
+      ],
+      "methods": [
+        "shorthand/methods"
+      ],
+      "requests": [
+        "lib/requests"
+      ],
+      "python": [
+        "lib/python"
+      ]
+    }
+  }
+}

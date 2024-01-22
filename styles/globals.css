@@ -1,0 +1,186 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;800&family=Pacifico&family=Oswald&family=Roboto&family=Barriecito&family=Open+Sans&family=Ubuntu&display=swap');
+
+ul {
+  @apply list-disc !important;
+}
+
+ol li, ul li {
+  @apply pl-2;
+}
+
+.position-none {
+  position: static !important;
+}
+
+/* Custom break-point Tailwind overrides. */
+
+.react-tooltip {
+  z-index: 10;
+}
+
+.ReactModal__Overlay {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+.ReactModal__Content {
+  @apply rounded-md shadow;
+  @apply lg:w-3/5 mx-auto;
+  @apply !inset-2;
+  @apply h-[80vh] lg:h-[70vh] my-auto;
+  overflow-y: scroll;
+  @apply relative;
+}
+
+.left-right-blue-text-gradient {
+  @apply bg-gradient-to-br from-blue-800 to-blue-500 bg-clip-text text-transparent;
+}
+
+.bg-ad {
+  background: #f7f6ff;
+}
+
+.bg-light-purple {
+  /* background: #CCD1FF; */
+  /* background: #87CEFA; */
+  /* background: #7ab8e6; */
+  /* background: #d1e1f3; */
+  background: linear-gradient(to bottom right, #d1e1f3, #c9d9ec) !important;
+}
+.bg-purple {
+  background: #3A4EFF !important;
+}
+.text-purple {
+  color: #3A4EFF;
+}
+.bg-purple-not-important {
+  background: #3A4EFF;
+}
+.text-white-important {
+  color: white !important;
+}
+
+.smart-input {
+  @apply w-full p-2 px-3.5 mb-2 rounded-md shadow;
+  @apply outline-none;
+  resize: vertical;
+}
+
+.smart-input-label {
+  @apply text-gray-400 text-base;
+}
+
+.Dropdown-root, .Dropdown-control {
+  @apply rounded !important;
+}
+
+.Dropdown-root {
+  @apply shadow;
+}
+
+.half {
+  @apply grid grid-cols-2 gap-x-4;
+}
+
+.third {
+  @apply grid grid-cols-3 gap-4;
+}
+
+body {
+  /* @apply bg-gradient-to-br from-gray-100 t/o-gray-200; */
+  /* @apply bg-gray-300; */
+  @apply bg-gray-200;
+  /* height: 100vh; */
+  width: 100%;
+  --scrollbar-width: calc(100vw - 100%);
+}
+
+/*overriding the alice carousel styling*/
+.alice-carousel__dots-item:not(.__custom):hover, .alice-carousel__dots-item:not(.__custom).__active {
+  @apply bg-primary !important;
+}
+.alice-carousel__prev-btn-item, .alice-carousel__next-btn-item {
+  @apply text-primary !important;
+}
+
+table {
+  width: 100%;
+}
+table, th, td {
+  @apply border !important;
+}
+.table td, .table th {
+  @apply p-2 px-4;
+  width: 50%;
+}
+
+.styled-markdown h1 {
+  @apply text-4xl font-bold mt-10 mb-5 pb-5 border-b text-gray-800;
+}
+.styled-markdown h2 {
+  @apply text-3xl font-bold text-gray-800;
+}
+.styled-markdown h3 {
+  @apply text-2xl font-bold text-gray-700;
+}
+
+.styled-markdown p {
+  @apply text-2xl !important;
+}
+
+.styled-markdown li {
+  @apply my-1 text-2xl ml-6 !important;
+}
+
+.styled-markdown * {
+  @apply my-6;
+}
+
+.styled-markdown a {
+  @apply text-blue-900 underline;
+}
+
+.styled-markdown img {
+  @apply mx-auto rounded m-4 shadow-xl;
+}
+
+.wiki-article-form div {
+  @apply !my-0;
+}
+.wiki-article-form input {
+  @apply !mt-1 rounded-md text-black;
+}
+
+/* 
+ * This applies itself to the dropdown in the header.
+ */
+.Dropdown-header-user, .Dropdown-header-user .Dropdown-control {
+  @apply !rounded-full;
+}
+
+.Dropdown-header-user .Dropdown-control {
+  @apply p-3 w-12 h-12 flex !items-center !justify-center !rounded-full;
+}
+
+.Dropdown-header-user .Dropdown-control {
+  @apply !bg-gradient-to-br from-blue-800 to-blue-900;
+}
+
+.Dropdown-header-user .Dropdown-placeholder {
+  @apply !text-gray-300;
+}
+
+.Dropdown-header-user .Dropdown-menu {
+  min-width: 200px;
+  right: 0;
+  @apply -mt-1;
+  @apply rounded;
+}
+
+.Dropdown-header-user .Dropdown-arrow-wrapper {
+  display: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
