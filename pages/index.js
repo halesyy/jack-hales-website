@@ -32,7 +32,7 @@ let IndexPage = (props) => {
                 }`}
             </style>
 
-            <BubblyBlock className="-mt-0 text-3xl leading-hard mx-16 !p-8">
+            <BubblyBlock className="-mt-0 text-3xl leading-hard mx-4 md:mx-16 !p-8">
                 Software Engineer from Australia 🇦🇺  <br/>
                 I love and focus on leverage and simplicity. <br />
                 By ensuring simplicity, leverage can be maximised.
