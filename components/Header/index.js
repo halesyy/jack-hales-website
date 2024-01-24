@@ -8,7 +8,7 @@ const Header = (props) => {
    return (
       <>
          <div className={classnames(
-            "m-4 rounded-xl"
+            "m-4 mt-6 rounded-xl"
          )}>
             <div className="">
             <Link href="/">

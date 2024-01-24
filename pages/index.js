@@ -1,11 +1,11 @@
 import Head from "next/head"
-import Block from "components/small/Block"
-import { SmallContainer } from "components/medium/Container"
+import classnames from "classnames"
 import BubblyBlock from "components/small/BubblyBlock"
 import { useState } from "react"
 import Modal from "react-modal"
 import PharmaPortalProject from "components/projects/PharmaPortal"
 import BrutePrimes from "components/projects/BrutePrimes"
+import { Button3D } from "components/small/Button"
 
 let ModalShorthand = ({text, modalContent}) => {
     let [isOpen, setIsOpen] = useState(false)
@@ -27,15 +27,20 @@ let IndexPage = (props) => {
             </Head>
             <style>
                 {`body { 
-                    background: rgba(99,136,255,1);
+                    // background: rgba(99,136,255,1);
+                    // background: #e7dbff;
+                    background: #f2edfc;
                     // background: linear-gradient(157deg, rgba(99,136,255,1) 0%, rgba(117,150,255,1) 100%); 
                 }`}
             </style>
 
-            <BubblyBlock className="-mt-0 text-3xl leading-hard mx-4 md:mx-16 !p-8">
+            <BubblyBlock className={classnames(
+                "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8",
+                "border-[30px] border-indigo-600"
+            )}>
                 Software Engineer from Australia 🇦🇺  <br/>
                 I love and focus on leverage and simplicity. <br />
-                By ensuring simplicity, leverage can be maximised.
+                {/* By ensuring simplicity, leverage can be maximised. */}
                 
                 <hr className="my-4" />
                 
@@ -104,9 +109,7 @@ let IndexPage = (props) => {
                         <li><ModalShorthand text="Brute-forcing Primes" modalContent={<BrutePrimes />} /></li>
                     </ul>
                 </div>
-
             </BubblyBlock>
-            <div className="pb-24"></div>
         </>
     )
 }
