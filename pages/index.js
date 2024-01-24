@@ -36,7 +36,7 @@ let IndexPage = (props) => {
 
             <BubblyBlock className={classnames(
                 "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8",
-                "border-[30px] border-indigo-600"
+                "border-[25px] border-indigo-600"
             )}>
                 Software Engineer from Australia 🇦🇺  <br/>
                 I love and focus on leverage and simplicity. <br />
