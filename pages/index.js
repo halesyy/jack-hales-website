@@ -5,7 +5,6 @@ import { useState } from "react"
 import Modal from "react-modal"
 import PharmaPortalProject from "components/projects/PharmaPortal"
 import BrutePrimes from "components/projects/BrutePrimes"
-import { Button3D } from "components/small/Button"
 
 let ModalShorthand = ({text, modalContent}) => {
     let [isOpen, setIsOpen] = useState(false)
