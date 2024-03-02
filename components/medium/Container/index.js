@@ -15,7 +15,7 @@ export let WideContainer = ({className, style, children, ...props}) => {
 export let SmallContainer = (props) => {
 	return (
 		<div className={classnames(
-			"mx-0 md:container md:mx-auto lg:px-32 md:px-6 sm:px-20 px-0 p-0 mb-12",
+			"px-2 sm:px-20 md:px-64 lg:px-64 xl:max-w-[900px] xl:mx-auto   mb-12",
 			props.className
 		)} style={props.style || {}}>
 			{props.children}

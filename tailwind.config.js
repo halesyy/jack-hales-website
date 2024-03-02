@@ -1,16 +1,18 @@
+const { nextui } = require("@nextui-org/react");
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: [
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './shorthand/**/*.{js,ts,jsx,tsx}',
     './styles/**/*.{js,ts,jsx,tsx}',
-    './wiki/articles/*.{mdx}'
+    './wiki/articles/*.{mdx}',
   ],
   mode: "jit",
   // purge: false,
-
-  darkMode: false,
-  // darkMode: "media", // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     extend: {
       gridTemplateColumns: {
@@ -78,13 +80,10 @@ module.exports = {
     },
     fontFamily: {
       "sans": ["Ubuntu", "Open Sans"]
-    },
-    container: {
-
     }
   },
+  plugins: [nextui()],
   variants: {
     extend: require("./tailwind.variants")
   },
-  plugins: [],
 }

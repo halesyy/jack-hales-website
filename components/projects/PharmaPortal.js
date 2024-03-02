@@ -3,8 +3,8 @@ import Title from "components/small/Title"
 
 let PharmaPortalProject = (props) => {
    return (
-      <div> 
-         <Title className="mt-4">Pharma Portal</Title>
+      <div className="modal-content"> 
+         {/* <Title className="mt-4">Pharma Portal</Title> */}
          <p>
             Pharma Portal (PP) is an end-to-end web app focussed on solving problems
             in the Australian Pharmaceutical space for pharmacies, suppliers, groups,
@@ -17,7 +17,7 @@ let PharmaPortalProject = (props) => {
          </p>
          <p>
             PP encapsulates:
-            <ul className="ml-10">
+            <ul className="ml-10 mt-4 list-disc">
                <li>Extraction from the several POS/Dispense systems</li>
                <li>Application level engineering</li>
                <li>Remote software updating</li>
@@ -35,7 +35,7 @@ let PharmaPortalProject = (props) => {
          <p>
             By being end-to-end on this project, it has taught me about all of the varying 
             roles and bodies involved in building an application:
-            <ul className="ml-10">
+            <ul className="ml-10 mt-4 list-disc">
                <li>Onboarding</li>
                <li>Support</li>
                <li>Application Development</li>

@@ -1,10 +1,7 @@
-import classnames from "classnames"
-import Link from "next/link"
-import { useRouter } from "next/router"
+import classnames from "classnames";
+import Link from "next/link";
 
-const Header = (props) => {  
-   let router = useRouter()
-
+const Header = ({ ...props }) => {  
    return (
       <>
          <div className={classnames(
