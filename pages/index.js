@@ -101,7 +101,7 @@ let IndexPage = ({ ...props }) => {
                         <li>Python, Flask</li>
                         <li>JavaScript, TypeScript, React, Node</li>
                         <li>Rust</li>
-                        <li><span className="text-gray-800/60">Experimenting with</span> Go</li>
+                        {/* <li><span className="text-gray-800/60">Experimenting with</span> Go</li> */}
                     </ul>
                     <div className="text-base mt-2 text-gray-400">
                         (MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind)
