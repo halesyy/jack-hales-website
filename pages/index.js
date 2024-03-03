@@ -1,8 +1,6 @@
 import Head from "next/head";
 import classnames from "classnames";
-// import BubblyBlock from "components/small/BubblyBlock";
 import { useState } from "react";
-// import Modal from "react-modal";
 import PharmaPortalProject from "components/projects/PharmaPortal";
 import BrutePrimes from "components/projects/BrutePrimes";
 import { SmallContainer } from "components/medium/Container";
@@ -11,20 +9,6 @@ import LogisticsMapping from "components/projects/LogisticsMapping";
 import Chemist2U from "components/projects/Chemist2U";
 import RAI_Levo from "components/projects/RAI_Levo";
 import RedwoodTrade from "components/projects/RedwoodTrade";
-
-// let ModalShorthandOld = ({text, modalContent}) => {
-//     let [isOpen, setIsOpen] = useState(false);
-//     return (
-//         <>
-//             <span className="underline cursor-pointer hover:text-blue-500" onClick={() => setIsOpen(true)}>
-//                 {text}
-//             </span>
-//             <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-//                 {modalContent}
-//             </Modal>        
-//         </>
-//     );
-// }
 
 let ModalShorthand = ({text, modalContent}) => {
     let [isOpen, setIsOpen] = useState(false);
@@ -100,11 +84,12 @@ let IndexPage = ({ ...props }) => {
                     <div className="mb-2">
                         Interests:
                     </div>
-                    <ul className="ml-14 list-disc">
+                    <ul className="ml-6 list-disc">
                         <li>Bush walks 🥾</li>
                         <li>Music 🎸 🥁 🎹</li>
                         <li>History 📜</li>
                         <li>Languages 🇮🇹</li>
+                        <li title="Who isn't?...">Travel 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭</li>
                     </ul>
                 </div>
                 <hr className="mt-6 mb-4" />
@@ -112,7 +97,7 @@ let IndexPage = ({ ...props }) => {
                     <div className="mb-2">
                         Programming, Databases:
                     </div>
-                    <ul className="ml-14 list-disc">
+                    <ul className="ml-6 list-disc">
                         <li>Python, Flask</li>
                         <li>JavaScript, TypeScript, React, Node</li>
                         <li>Rust</li>
@@ -127,7 +112,7 @@ let IndexPage = ({ ...props }) => {
                     <div className="mb-2">
                         Projects of Interest:
                     </div>
-                    <ul className="ml-14 list-disc">
+                    <ul className="ml-6 list-disc">
                         <li>
                             <ModalShorthand text="Pharma Portal - Pharmaceuticals" modalContent={<PharmaPortalProject />} />
                         </li>
@@ -144,26 +129,26 @@ let IndexPage = ({ ...props }) => {
                     <div className="mb-2">
                         Brand Involvement:
                     </div>
-                    <ul className="ml-14 list-disc">
+                    <ul className="md:ml-14 list-none md:list-disc">
                         <li>
                             <ModalShorthand text={
                                 <div>
-                                    <img src="/chemist2u.png" className="h-[70px]" alt="Chemist2U" />
+                                    <img src="/chemist2u.png" className="md:h-[70px]" alt="Chemist2U" />
                                 </div>
                             } modalContent={<Chemist2U />} />
                         </li>
                         <li>
                             <ModalShorthand text={
                                 <div>
-                                    <img src="/redwood-trade.webp" className="h-[70px]" alt="Redwood Trade" />
+                                    <img src="/redwood-trade.webp" className="md:h-[70px] -ml-3 mt-1" alt="Redwood Trade" />
                                 </div>
                             } modalContent={<RedwoodTrade />} />
                         </li>
                         <li>
                             <ModalShorthand text={
-                                <div className="flex gap-4 items-center">
-                                    <img src="/levo.png" className="h-[40px]" alt="Levo" />
-                                    <img src="/regional-australia-institute.png" className="h-[70px]" alt="Regional Australia Institute" />
+                                <div className="md:flex gap-4 items-center">
+                                    <img src="/levo.png" className="h-[40px] mx-auto md:mx-0" alt="Levo" />
+                                    <img src="/regional-australia-institute.png" className="h-[70px] mx-auto md:mx-0 mt-2 md:mt-0" alt="Regional Australia Institute" />
                                 </div>
                             } modalContent={<RAI_Levo />} />
                         </li>
