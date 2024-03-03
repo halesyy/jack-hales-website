@@ -88,7 +88,7 @@ let IndexPage = ({ ...props }) => {
                         <li>Bush walks 🥾</li>
                         <li>Music 🎸 🥁 🎹</li>
                         <li>History 📜</li>
-                        <li>Languages 🇮🇹</li>
+                        {/* <li>Languages 🇮🇹</li> */}
                         <li title="Who isn't?...">Travel 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭</li>
                     </ul>
                 </div>
