@@ -6,9 +6,11 @@ import { useState } from "react";
 import PharmaPortalProject from "components/projects/PharmaPortal";
 import BrutePrimes from "components/projects/BrutePrimes";
 import { SmallContainer } from "components/medium/Container";
-import { Button, Modal, ModalBody, ModalContent, ModalFooter } from "@nextui-org/react";
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/react";
 import LogisticsMapping from "components/projects/LogisticsMapping";
 import Chemist2U from "components/projects/Chemist2U";
+import RAI_Levo from "components/projects/RAI_Levo";
+import RedwoodTrade from "components/projects/RedwoodTrade";
 
 // let ModalShorthandOld = ({text, modalContent}) => {
 //     let [isOpen, setIsOpen] = useState(false);
@@ -33,6 +35,9 @@ let ModalShorthand = ({text, modalContent}) => {
             </span>
             <Modal size="4xl" isOpen={isOpen} onOpenChange={(v) => setIsOpen(v)}>
                 <ModalContent>
+                    <ModalHeader className="text-3xl font-bold">
+                        {text}
+                    </ModalHeader>
                     <ModalBody className="max-h-[70vh] overflow-y-scroll text-2xl pt-5">
                         {modalContent}
                     </ModalBody>
@@ -129,13 +134,25 @@ let IndexPage = ({ ...props }) => {
                         <li>
                             <ModalShorthand text={
                                 <div>
-                                    <img src="/chemist2u.png" height={40} alt="Chemist2U" />
+                                    <img src="/chemist2u.png" className="h-[70px]" alt="Chemist2U" />
                                 </div>
                             } modalContent={<Chemist2U />} />
                         </li>
-                        <li>Redwood Trade</li>
-                        <li>Regional Australian Institute</li>
-                        <li>StrongRoom</li>
+                        <li>
+                            <ModalShorthand text={
+                                <div>
+                                    <img src="/redwood-trade.webp" className="h-[70px]" alt="Redwood Trade" />
+                                </div>
+                            } modalContent={<RedwoodTrade />} />
+                        </li>
+                        <li>
+                            <ModalShorthand text={
+                                <div className="flex gap-4 items-center">
+                                    <img src="/levo.png" className="h-[40px]" alt="Levo" />
+                                    <img src="/regional-australia-institute.png" className="h-[70px]" alt="Regional Australia Institute" />
+                                </div>
+                            } modalContent={<RAI_Levo />} />
+                        </li>
                     </ul>
                 </div>
             </SmallContainer>

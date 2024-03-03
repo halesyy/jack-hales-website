@@ -12,8 +12,8 @@ export default function Chemist2U({ ...props }) {
          </p>
          <p>
             I've started to manage what is best described as "accounts" for groups, making sure their 
-            data divisions are comfortable with our data extraction. This also involves creating unique
-            systems to expand their power through our connected network.
+            data divisions are comfortable with our data extraction, and creating unique
+            systems to expand their power through our well-connected network.
          </p>
       </div>
    );

@@ -24,16 +24,16 @@ module.exports = {
         "1-4": "1fr 4fr",
       },
       colors: {
-        "primary": "#ffc500",
-        "primary-tailwind": "#f59e0b",
-        "chemist2u": "#ea5078",
-        "primary-st": "rgba(255, 197, 0, 0.8)",
-        "light-green": "#ebfff2",
-        "secondary": "black",
-        "primary-darker": "#e6b100",
-        "primary-full": "#ffc500",
-        "smoke": "whitesmoke",
-        "gray-light": "#ededed"
+        // "primary": "#ffc500",
+        // "primary-tailwind": "#f59e0b",
+        // "chemist2u": "#ea5078",
+        // "primary-st": "rgba(255, 197, 0, 0.8)",
+        // "light-green": "#ebfff2",
+        // "secondary": "black",
+        // "primary-darker": "#e6b100",
+        // "primary-full": "#ffc500",
+        // "smoke": "whitesmoke",
+        // "gray-light": "#ededed"
       },
       boxShadow: {
         "pop": "0px 0px 19px 5px #E0E0E0",
@@ -75,7 +75,7 @@ module.exports = {
         "1/4": "33vh"
       },
       lineHeight: {
-        "hard": "3rem"
+        // "hard": "3rem"
       }
     },
     fontFamily: {
