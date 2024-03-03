@@ -54,7 +54,12 @@ let IndexPage = ({ ...props }) => {
     return (
         <>
             <Head>
-                <title>Jack Hales</title>
+                <title>Jack Hales | Software from Kempsey for the World</title>
+                <meta
+                    name="description"
+                    content="Jack Hales is an Australian software engineer."
+                    key="desc"
+                />
             </Head>
             <SmallContainer className={classnames(
                 "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8",
@@ -90,7 +95,7 @@ let IndexPage = ({ ...props }) => {
                         GitHub
                     </a>
                 </div>
-                <hr className="mt-6 mb-4" />
+                <hr className="my-4" />
                 <div>
                     <div className="mb-2">
                         Interests:
