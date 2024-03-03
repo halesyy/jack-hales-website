@@ -57,7 +57,7 @@ let IndexPage = ({ ...props }) => {
                 <title>Jack Hales | Software from Kempsey for the World</title>
                 <meta
                     name="description"
-                    content="Jack Hales is an Australian software engineer."
+                    content="Jack Hales is an Australian software engineer focussed on creativity hitting reality."
                     key="desc"
                 />
             </Head>
