@@ -6,7 +6,7 @@ import { useState } from "react";
 import PharmaPortalProject from "components/projects/PharmaPortal";
 import BrutePrimes from "components/projects/BrutePrimes";
 import { SmallContainer } from "components/medium/Container";
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/react";
+import { Button, Link, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/react";
 import LogisticsMapping from "components/projects/LogisticsMapping";
 import Chemist2U from "components/projects/Chemist2U";
 import RAI_Levo from "components/projects/RAI_Levo";
@@ -60,8 +60,9 @@ let IndexPage = ({ ...props }) => {
                 "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8",
                 // "border-[25px] border-indigo-600"
             )}>
-                Software Engineer from Australia 🇦🇺  <br/>
-                I love simplicity <br />
+                <div className="text-center">
+                    Software Engineer from Australia 🇦🇺
+                </div>
                 <hr className="my-4" />
                 My socials:
                 <div className="grid grid-cols-3 text-center text-lg my-4 shadow-xl">  
@@ -112,12 +113,14 @@ let IndexPage = ({ ...props }) => {
                         (MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind)
                     </div>
                 </div>
-                <hr className="mt-6 mb-4" />
+                <hr className="mt-6 mb-6" />
                 <div>
-                    Projects of Interest:
+                    <div className="mb-2">
+                        Projects of Interest:
+                    </div>
                     <ul className="ml-14 list-disc">
                         <li>
-                            <ModalShorthand text="Pharmaceuticals - Pharma Portal" modalContent={<PharmaPortalProject />} />
+                            <ModalShorthand text="Pharma Portal - Pharmaceuticals" modalContent={<PharmaPortalProject />} />
                         </li>
                         <li>
                             <ModalShorthand text="Logistics" modalContent={<LogisticsMapping />} />
@@ -129,7 +132,9 @@ let IndexPage = ({ ...props }) => {
                 </div>
                 <hr className="mt-6 mb-4" />
                 <div>
-                    Brand Involvement:
+                    <div className="mb-2">
+                        Brand Involvement:
+                    </div>
                     <ul className="ml-14 list-disc">
                         <li>
                             <ModalShorthand text={
