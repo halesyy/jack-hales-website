@@ -117,10 +117,10 @@ let IndexPage = ({ ...props }) => {
                             <ModalShorthand text="Pharma Portal - Pharmaceuticals" modalContent={<PharmaPortalProject />} />
                         </li>
                         <li>
-                            <ModalShorthand text="Logistics" modalContent={<LogisticsMapping />} />
+                            <ModalShorthand text="Data in Supply-chain Logistics" modalContent={<LogisticsMapping />} />
                         </li>
                         <li>
-                            <ModalShorthand text="Brute-forcing Primes" modalContent={<BrutePrimes />} />
+                            <ModalShorthand text="Brute-forcing Prime Numbers" modalContent={<BrutePrimes />} />
                         </li>
                     </ul>
                 </div>
