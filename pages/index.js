@@ -64,20 +64,20 @@ let IndexPage = ({ ...props }) => {
                     Software Engineer from Australia 🇦🇺
                 </div>
                 <hr className="my-4" />
-                My socials:
+                {/* My socials: */}
                 <div className="grid grid-cols-3 text-center text-lg my-4 shadow-xl">  
                     <a 
                         href="https://www.linkedin.com/in/jackhales/" 
                         target="_linkedin" 
-                        className="text-white p-4 rounded-l-lg" 
-                        style={{ background: "#0a66c2"}}
+                        className="text-white p-4 rounded-l-lg hover:!bg-blue-600" 
+                        style={{ background: "#0a66c2" }}
                     >
                         LinkedIn
                     </a>
                     <a 
                         href="https://stackoverflow.com/users/5782416/jack-hales" 
                         target="_stackoverflow" 
-                        className="text-white p-4 bg-yellow-500"
+                        className="text-white p-4 bg-yellow-500 hover:bg-yellow-400"
                     >
                         Stack Overflow
                     </a>
@@ -85,14 +85,16 @@ let IndexPage = ({ ...props }) => {
                         href="https://github.com/halesyy/" 
                         target="_github"
                         // className="bg-black text-white p-4 rounded-r-lg"
-                        className="bg-green-400 text-white p-4 rounded-r-lg"
+                        className="bg-green-400 text-white p-4 rounded-r-lg hover:bg-green-300"
                     >
                         GitHub
                     </a>
                 </div>
                 <hr className="mt-6 mb-4" />
                 <div>
-                    Interests:
+                    <div className="mb-2">
+                        Interests:
+                    </div>
                     <ul className="ml-14 list-disc">
                         <li>Bush walks 🥾</li>
                         <li>Music 🎸 🥁 🎹</li>
@@ -102,10 +104,12 @@ let IndexPage = ({ ...props }) => {
                 </div>
                 <hr className="mt-6 mb-4" />
                 <div>
-                    Programming, Databases:
+                    <div className="mb-2">
+                        Programming, Databases:
+                    </div>
                     <ul className="ml-14 list-disc">
                         <li>Python, Flask</li>
-                        <li>JavaScript, React, Node</li>
+                        <li>JavaScript, TypeScript, React, Node</li>
                         <li>Rust</li>
                         <li><span className="text-gray-800/60">Experimenting with</span> Go</li>
                     </ul>
