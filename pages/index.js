@@ -129,7 +129,7 @@ let IndexPage = ({ ...props }) => {
                     <div className="mb-2">
                         Brand Involvement:
                     </div>
-                    <ul className="md:ml-14 list-none md:list-disc">
+                    <ul className="md:ml-6 list-none md:list-disc">
                         <li>
                             <ModalShorthand text={
                                 <div>
