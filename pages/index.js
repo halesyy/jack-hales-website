@@ -95,6 +95,24 @@ let IndexPage = ({ ...props }) => {
                 <hr className="mt-6 mb-4" />
                 <div>
                     <div className="mb-2">
+                        I create:
+                    </div>
+                    <ul className="ml-6 list-disc">
+                        <li>Websites, Web-apps</li>
+                        <li>Backends</li>
+                        <li>Software</li>
+                        <li>Libraries, Dependencies</li>
+                        <li>Chrome Extensions</li>
+                        <li>Architecture, Infrastructure</li>
+                        <li>Strategy</li>
+                    </ul>
+                    {/* <div className="text-base mt-2 text-gray-400">
+                        (MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind)
+                    </div> */}
+                </div>
+                <hr className="mt-6 mb-4" />
+                <div>
+                    <div className="mb-2">
                         Programming, Databases:
                     </div>
                     <ul className="ml-6 list-disc">
