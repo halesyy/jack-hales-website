@@ -89,11 +89,11 @@ export default function ArticlePage({ data, content }): React.ReactNode {
             <meta property="og:description" content={data.description} />
          </Head>
          <Divider className="my-8 bg-gray-200/50" />
-         <span className="text-blue-100 hover:text-blue-300 cursor-pointer float-left mt-4" onClick={() => {
+         <div className="text-blue-100 px-2 hover:text-blue-300 cursor-pointer mt-4" onClick={() => {
             window.history.back();
          }}>
             &larr; Back
-         </span>
+         </div>
          <div className="text-center">
             <div className="text-3xl font-bold">
                {data.title}
@@ -102,7 +102,7 @@ export default function ArticlePage({ data, content }): React.ReactNode {
                {data.date}
             </div>
          </div>
-         <div className="mdx-content">
+         <div className="mdx-content px-2">
             <MDXRemote {...content} components={{
                p: ({ children }) => (
                   <div className="my-6 text-xl text-justify">
