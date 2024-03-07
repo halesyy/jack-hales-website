@@ -6,6 +6,7 @@ import { MediumContainer } from "components/medium/Container";
 import { getPost, listArticles } from "lib/articles";
 import { Divider } from "@nextui-org/react";
 import classNames from "classnames";
+import Head from "next/head";
 
 /**
  * Returns the paths which can be statically rendered.
@@ -81,6 +82,9 @@ function headerComponent(size: number): ({
 export default function ArticlePage({ data, content }): React.ReactNode {
    return (
       <MediumContainer>
+         <Head>
+            <title>{`${data.title} - Jack Hales`}</title>
+         </Head>
          <Divider className="my-8 bg-gray-200/50" />
          <div className="text-center">
             <div className="text-3xl font-bold">
@@ -93,14 +97,17 @@ export default function ArticlePage({ data, content }): React.ReactNode {
          <div className="mdx-content">
             <MDXRemote {...content} components={{
                p: ({ children }) => (
-                  <div className="my-4 text-xl text-justify">
+                  <div className="my-6 text-xl text-justify">
                      {children}
                   </div>
                ),
                h1: headerComponent(1),
                h2: headerComponent(2),
                h3: headerComponent(3),
-               h4: headerComponent(4)
+               h4: headerComponent(4),
+               ul: ({ children }) => (<ul className="list-disc list-inside">{children}</ul>),
+               li: ({ children }) => (<li className="text-xl">{children}</li>),
+               strong: ({ children }) => (<strong>{children}</strong>)
             }} />
          </div>
       </MediumContainer>

@@ -3,6 +3,7 @@ import { SmallContainer } from "components/medium/Container";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import Link from "next/link";
 import { getPost, listArticles } from "lib/articles";
+import Head from "next/head";
 
 // TODO Make an article type for fields.
 
@@ -62,6 +63,9 @@ export default function Articles({ articles, ...props }: Readonly<{
 }>): React.ReactNode {
    return (
       <SmallContainer className="mt-8">
+         <Head>
+            <title>Articles - Jack Hales</title>
+         </Head>
          {articles.sort((a1, a2) => (
             a2.datetime.localeCompare(a1.datetime)
          )).map((article, i) => (
