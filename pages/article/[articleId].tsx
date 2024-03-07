@@ -114,7 +114,7 @@ export default function ArticlePage({ data, content }): React.ReactNode {
                h3: headerComponent(3),
                h4: headerComponent(4),
                ul: ({ children }) => (<ul className="list-disc list-inside">{children}</ul>),
-               li: ({ children }) => (<li className="text-xl my-2">{children}</li>),
+               li: ({ children }) => (<li className="text-xl">{children}</li>),
                strong: ({ children }) => (<strong>{children}</strong>)
             }} />
          </div>
