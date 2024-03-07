@@ -84,6 +84,9 @@ export default function ArticlePage({ data, content }): React.ReactNode {
       <MediumContainer>
          <Head>
             <title>{`${data.title} - Jack Hales`}</title>
+            <meta name="description" content={data.description} />
+            <meta property="og:title" content={`${data.title} - Jack Hales`} />
+            <meta property="og:description" content={data.description} />
          </Head>
          <Divider className="my-8 bg-gray-200/50" />
          <span className="text-blue-100 hover:text-blue-300 cursor-pointer float-left mt-4" onClick={() => {
