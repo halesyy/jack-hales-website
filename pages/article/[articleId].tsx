@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+
 import { Option, none, some } from "fp-ts/lib/Option";
 import { serialize } from "next-mdx-remote/serialize";
 import { option } from "fp-ts";
@@ -17,7 +18,7 @@ type PostResponse = {
  * Must be in the POSTS const.
  * @param articleId
  */
-function getPost(articleId: string): Option<PostResponse> {
+export function getPost(articleId: string): Option<PostResponse> {
    if (!(listArticles().includes(articleId))) {
       return none;
    }
@@ -35,7 +36,7 @@ function getPost(articleId: string): Option<PostResponse> {
  * Returns a list of the string paths for articles which exist.
  * @returns {string[]}
  */
-function listArticles(): string[] {
+export function listArticles(): string[] {
    const files = fs.readdirSync(path.join("articles"));
 
    const articles = files.map((filename) => {
