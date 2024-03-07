@@ -46,6 +46,9 @@ function listArticles(): string[] {
    return articles;
 }
 
+/**
+ * Returns the paths which can be statically rendered.
+ */
 export async function getStaticPaths() {
    const paths = listArticles().map((articleId) => ({
       params: { articleId }
