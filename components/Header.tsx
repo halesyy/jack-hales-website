@@ -13,6 +13,7 @@ const Header = ({ ...props }) => {
                      src="/jack-hales-picture.jpg"
                      width={125}
                      className={classnames("mx-auto rounded-full shadow-xl")}
+                     alt="Jack Hales Picture"
                   />
                </Link>
             </div>

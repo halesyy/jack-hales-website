@@ -58,8 +58,7 @@ let IndexPage = ({ ...props }) => {
                     <a 
                         href="https://www.linkedin.com/in/jackhales/" 
                         target="_linkedin" 
-                        className="text-white p-4 rounded-l-lg hover:!bg-blue-600" 
-                        style={{ background: "#0a66c2" }}
+                        className="text-white p-4 rounded-l-lg bg-blue-500 hover:!bg-blue-600" 
                     >
                         LinkedIn
                     </a>
@@ -106,9 +105,6 @@ let IndexPage = ({ ...props }) => {
                         <li>Architecture, Infrastructure</li>
                         <li>Strategy</li>
                     </ul>
-                    {/* <div className="text-base mt-2 text-gray-400">
-                        (MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind)
-                    </div> */}
                 </div>
                 <hr className="mt-6 mb-4" />
                 <div>
