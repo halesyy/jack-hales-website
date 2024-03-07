@@ -1,9 +1,14 @@
 import { listArticles } from "lib/articles";
 
+const ARTICLE_IDS: string[] = [ 
+   "prime-number-research",
+   "software-topology"
+];
+
 function siteMap() {
    // All articles.
-   const articleIds = listArticles();
-   const articleSitemaps = articleIds.map((articleId) => (
+   // const articleIds = listArticles();
+   const articleSitemaps = ARTICLE_IDS.map((articleId) => (
       `<url><loc>https://www.jackhales.com/article/${articleId}</loc></url>`
    ));   
    return `<?xml version="1.0" encoding="UTF-8"?>
