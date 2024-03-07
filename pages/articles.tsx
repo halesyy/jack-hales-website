@@ -1,11 +1,9 @@
 import { option } from "fp-ts";
-import { SmallContainer } from "components/medium/Container";
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import { MediumContainer, SmallContainer } from "components/medium/Container";
+import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Link from "next/link";
 import { getPost, listArticles } from "lib/articles";
 import Head from "next/head";
-
-// TODO Make an article type for fields.
 
 type Article = {
    id: string,
@@ -41,10 +39,10 @@ function ArticlePreview({ article }: Readonly<{
 }>): React.ReactNode {
    return (
       <Link href={`/article/${article.id}`}>
-         <Card className="w-full" isPressable>
-            <CardHeader className="text-xl">
+         <Card className="w-full px-2 hover:scale-105" isPressable>
+            <CardHeader className="text-xl block text-left">
                {article.title}
-               <div className="text-gray-300 text-sm flex-grow text-right">
+               <div className="text-gray-300 text-sm">
                   {article.date}
                </div>
             </CardHeader>
@@ -62,7 +60,7 @@ export default function Articles({ articles, ...props }: Readonly<{
    articles: Article[]
 }>): React.ReactNode {
    return (
-      <SmallContainer className="mt-8">
+      <MediumContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
          <Head>
             <title>Articles - Jack Hales</title>
          </Head>
@@ -71,6 +69,6 @@ export default function Articles({ articles, ...props }: Readonly<{
          )).map((article, i) => (
             <ArticlePreview article={article} />
          ))}
-      </SmallContainer>
+      </MediumContainer>
    )   
 }

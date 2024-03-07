@@ -1,0 +1,63 @@
+---
+title: "Prime Number Research"
+date: "January 2022"
+description: "Moved from my BlogSpot."
+---
+
+This is an informal dump of my findings so far, minus chartings at the moment until I come back to formally reference this. I have no prior experience in primes, or number theory for that matter, which is why I thought it would be useful to use some of my custom field-acquired data science methods which are quite unconventional to an important topic.
+
+So far I've only spent a few good days working on this, but, like my other work, I plan to consistently work on this and apply new/fresh ideas as I come up with them outside of the working time.
+
+## Brute Forcing Equations
+
+Before sighing, take a moment to consider how the prime number set is the perfect set for brute forcing an algorithm to fit it. We know it grows in a sporatic pattern, but doesn't follow a simple, common curve. Now apply human bias in engineering algorithms and solutions, and our difficulty grasping non-linears, and you hopefully see how brute forcing equations can help us potentially extract understanding.
+
+Problems to solve:
+
+### Creating random equation strings that work with a balance between openness (more openness means more failed equations) and structure (more structure means more successful equations).
+
+I used the constants and functions in py-expression-val, including sine, tan, logarithm (with custom bases), eulers number, pi, exponentials, brackets, and equation re-substitution (equation fits into equation, like x+2 into sin(x) making sin(x+2). This worked nicely, and it's quite interesting seeing eulers number and pi come together to make interesting equations.
+
+### Scoring equations generated, aka error functions.
+
+This was achieved in a few ways.
+
+The first was a repurpose of MAPE (mean absolute percentage error), and the second was simply a running absolute error (which turned out to be the best). The first was done by taking the prime series (2, 3, 5, 7), and an equation, and picking a random iterator for the equation. Say we're at 1, and the iterator is 5, we'd substitute 1, 6, 11, 16 into the equation to get the secondary series. Then, take the percentage change in each set, and get the absolute differnece. The "best" algorithms you end up getting are the ones with the best percentage closeness to the rate of change in the prime series, and this brings down the search space for algorithms considerably.
+
+I realised this algorithm had a few flaws, so I moved to an absolute difference percentage delta. Using the above algorithm on f(x) = x, so 1, 2, 3, 4, you will notice the percentage change is: 100%, 50%, 33%, so-forth. Using an absolute difference percentage delta, this is 100% consistently, as (1, 2, 3, 4) turns into (1, 1, 1, 1), therefore 0% or 100% given your calculation. This is, without realising, the same as absolute differnece - which is where I started and ended.
+
+Absolute difference as an error function is simple and increases the search space, but it ensures that the bruted equation fits the primary series (primes) the closest, and this helps with paramaterization. Note: I found the closest equation using the first algorithm explained, then fine-tuned (paramaterized) with absolute error - they are both useful.
+
+Since our desired error is 0 and we're using an infinite (finite) series of primes, we use infinite as our initial "best" so everything is less than this number.
+
+### Conclusion
+
+With both of these problems solved, we can run our brute force equation finder, and lowe and behold, after hours...
+
+# f(x) = x log(2x, 7)
+
+Well... sort of...
+
+Graphing this equation then picking the 50th prime gets close, but not as close as expected. The way this was figured out was by graphing f(x)=x*log(x, 7) (base 7), starting at 1, and iterating by 2 (1, 3, 5, 7, etc), where the prime set is (2, 3, 5, 7). So, plotting that and picking the 50th prime (which is 229), subbing x=101, we get 240, off by 11.
+
+Let's try with the 500th prime. For this on our curve, we substitute 1001 (x*2+1). The actual 500th prime is 3,571. From our equation, this is 3,554, off by -17.
+
+To re-explain, our equation is f(x)=x*log(x, 7), where 7 is the base of our logarithm. X = whatever # prime we want (say, 5th prime = 5), times 2, plus 1. Or, X = nth prime we want * 2 + 1.
+
+Finally, we'll try the 10,000th prime. The prime is 104,729, and our result is 101,793, a differnece of -2,936. As you'll notice, this equation is really nice, and interesting, but given large numbers, it begins to break down. What's further interesting is the decay from fitting the curve looks misleadingly linear. I've spent hours trying to fit this decay to perfect it, only to throw larger numbers and notice it decaying even further. I've tried regression with multiple degrees, logarithmic regression, and many other hyper-fitting algorithms, including hyper-paramaterization on the bases, and iteration increases. I've found a lot of interesting patterms. I'm actively working on this, so I will add updates.
+
+I just wanted to release some information out there to showcase what I've found so far. I'm not toatally convinced there's a hyper-fit for primes here, but I believe its very interesting information.
+
+This isn't even accounting for my nth-differential work, which is just beginning in primes. Below is a list of things I've tested that I've noted down (very informal):
+
+- The best fit line without excessive parameterisation is f(x)=x*log(2*x, 7), where the log parameters are base then number of.
+- When statically setting log of to 7 and determining the best iter-of (2 in above, in 2*x), it graphs a bunch of messy data which best fits f(x)=log(2*x, 7).
+- When taking a set of primes (say first 500 primes), the nth differentials always begin with 1, and move at either -2, 0, or 2. Meaning, there is a static differential when digging deep enough into the set of primes. This was discovered by using absolute differences in the set, then determining the directionality of the actual difference. When doing actual differences, it quickly goes off into infinite.
+- You can best fit any subsection of primes to the log curve by parameterising excessively.
+
+Moving forward with some final thoughts.
+
+## Final Thoughts
+
+More to come. This is an old thought, project, and I will return to this in the future. It's been a really rewarding challenge.
+

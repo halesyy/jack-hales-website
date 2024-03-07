@@ -86,6 +86,11 @@ export default function ArticlePage({ data, content }): React.ReactNode {
             <title>{`${data.title} - Jack Hales`}</title>
          </Head>
          <Divider className="my-8 bg-gray-200/50" />
+         <span className="text-blue-100 hover:text-blue-300 cursor-pointer float-left mt-4" onClick={() => {
+            window.history.back();
+         }}>
+            &larr; Back
+         </span>
          <div className="text-center">
             <div className="text-3xl font-bold">
                {data.title}
@@ -106,7 +111,7 @@ export default function ArticlePage({ data, content }): React.ReactNode {
                h3: headerComponent(3),
                h4: headerComponent(4),
                ul: ({ children }) => (<ul className="list-disc list-inside">{children}</ul>),
-               li: ({ children }) => (<li className="text-xl">{children}</li>),
+               li: ({ children }) => (<li className="text-xl my-2">{children}</li>),
                strong: ({ children }) => (<strong>{children}</strong>)
             }} />
          </div>
