@@ -1,4 +1,6 @@
+import { Link, LinkIcon } from "@nextui-org/react"
 import Title from "components/small/Title"
+import NextLink from "next/link"
 
 let BrutePrimes = (props) => {
    return (
@@ -24,7 +26,7 @@ let BrutePrimes = (props) => {
 
          <p>
             My <a className="text-blue-600 underline" href="https://github.com/halesyy/brute-primes" target="_bruteGit">"brute-forcing primes"</a> project is an 
-            example of this. I also wrote an <a className="text-blue-600 underline" href="https://jackhales.blogspot.com/2022/01/prime-number-research.html" target="_primeBlog">article</a> about it. 
+            example of this. I also wrote an <Link href="/article/prime-number-research" className="text-2xl" as={NextLink}>article</Link> about it. 
          </p>
 
          <p>
