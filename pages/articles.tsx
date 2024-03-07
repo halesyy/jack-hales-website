@@ -60,7 +60,7 @@ export default function Articles({ articles, ...props }: Readonly<{
    articles: Article[]
 }>): React.ReactNode {
    return (
-      <MediumContainer className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+      <MediumContainer className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-8">
          <Head>
             <title>Articles - Jack Hales</title>
          </Head>
