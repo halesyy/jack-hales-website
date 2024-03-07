@@ -1,51 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
 
-import { Option, none, some } from "fp-ts/lib/Option";
 import { serialize } from "next-mdx-remote/serialize";
 import { option } from "fp-ts";
 import { MDXRemote } from "next-mdx-remote";
-import { SmallContainer } from "components/medium/Container";
-
-type PostResponse = {
-   data: {[key: string]: any},
-   content: string
-};
-
-/**
- * Returns a post's matter parse from the article ID.
- * Must be in the POSTS const.
- * @param articleId
- */
-export function getPost(articleId: string): Option<PostResponse> {
-   if (!(listArticles().includes(articleId))) {
-      return none;
-   }
-
-   // Read the file content from the article.
-   const fileContent = fs.readFileSync(path.join(
-      `articles/${articleId}.mdx`
-   ), "utf8");
-   const { data, content } = matter(fileContent);
-
-   return some({ data, content });
-}
-
-/**
- * Returns a list of the string paths for articles which exist.
- * @returns {string[]}
- */
-export function listArticles(): string[] {
-   const files = fs.readdirSync(path.join("articles"));
-
-   const articles = files.map((filename) => {
-      const slug = filename.replace(".mdx", "");
-      return slug
-   });
-
-   return articles;
-}
+import { MediumContainer } from "components/medium/Container";
+import { getPost, listArticles } from "lib/articles";
+import { Divider } from "@nextui-org/react";
+import classNames from "classnames";
 
 /**
  * Returns the paths which can be statically rendered.
@@ -54,8 +14,6 @@ export async function getStaticPaths() {
    const paths = listArticles().map((articleId) => ({
       params: { articleId }
    }));
-
-   console.log(paths);
 
    return {
       paths,
@@ -68,9 +26,7 @@ export async function getStaticPaths() {
  * @returns 
  */
 export async function getStaticProps({ params }) {
-   console.log(params);
    const post = getPost(params.articleId);
-   console.log(post);
    if (option.isSome(post)) {
       const { data, content } = option.toNullable(post);
       const mdxForClient = await serialize(content);
@@ -85,16 +41,68 @@ export async function getStaticProps({ params }) {
    }
 }
 
+function headerComponent(size: number): ({
+   children
+}: Readonly<{
+   children: React.ReactNode 
+}>) => React.ReactNode {
+   let textSize: string;
+   switch (size) {
+      case 1:
+         textSize = "text-4xl";
+         break;
+      case 2:
+         textSize = "text-3xl";
+         break;
+      case 3:
+         textSize = "text-2xl";
+         break;
+      case 4:
+         textSize = "text-xl";
+         break;
+      case 5:
+         textSize = "text-lg";
+         break;
+      case 6:
+         textSize = "text-base";
+         break;
+      default:
+         textSize = "text-3xl";
+         break;
+   }
+   
+   return ({children}) => (
+      <div className={classNames(textSize, "font-bold")}>
+         {children}
+      </div>
+   )
+}
+
 export default function ArticlePage({ data, content }): React.ReactNode {
    return (
-      <SmallContainer>
-         <h1>{data.title}</h1>
-         <p>{data.date}</p>
-         <div>
+      <MediumContainer>
+         <Divider className="my-8 bg-gray-200/50" />
+         <div className="text-center">
+            <div className="text-3xl font-bold">
+               {data.title}
+            </div>
+            <div className="text-gray-400 mb-10">
+               {data.date}
+            </div>
+         </div>
+         <div className="mdx-content">
             <MDXRemote {...content} components={{
-               Test: () => <div>Test</div>
+               p: ({ children }) => (
+                  <div className="my-4 text-xl text-justify">
+                     {children}
+                  </div>
+               ),
+               h1: headerComponent(1),
+               h2: headerComponent(2),
+               h3: headerComponent(3),
+               h4: headerComponent(4)
             }} />
          </div>
-      </SmallContainer>
+      </MediumContainer>
    )
 }
