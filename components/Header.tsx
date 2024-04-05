@@ -1,4 +1,4 @@
-import { Link } from "@nextui-org/react";
+import { Divider, Link } from "@nextui-org/react";
 import classnames from "classnames";
 import NextLink from "next/link";
 
@@ -25,8 +25,13 @@ const Header = ({ ...props }) => {
                CTO of <Link href="https://dataology.com.au" target="_dataology" as={NextLink}>Dataology</Link> <br />
             </div>
             <div className="opacity-75">
+               <Link href="mailto:me@jackhales.com" as={NextLink} target="_emailMe">
+                  me@jackhales.com
+               </Link>
+            </div>
+            <Divider className="my-2 mt-3 w-12 mx-auto" />
+            <div className="opacity-75">
                <Link href="/articles" as={NextLink}>Articles</Link>
-
             </div>
          </div>
       </>

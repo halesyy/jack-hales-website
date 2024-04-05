@@ -41,13 +41,13 @@ let IndexPage = ({ ...props }) => {
                 <title>Jack Hales - Software from Kempsey to the World</title>
                 <meta
                     name="description"
-                    content="Jack Hales is an Australian software engineer focussed on creativity hitting reality."
+                    content="Jack Hales is an Australian software engineer focussed on creativity hitting reality. Jack currently works as the CTO of Dataology, a data and software company."
                     key="desc"
                 />
             </Head>
             <SmallContainer className={classnames(
                 "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8",
-                // "border-[25px] border-indigo-600"
+                // "border-[10px] border-indigo-600 rounded-t-lg",
             )}>
                 <div className="text-center">
                     Software Engineer from Australia 🇦🇺
@@ -109,16 +109,16 @@ let IndexPage = ({ ...props }) => {
                 <hr className="mt-6 mb-4" />
                 <div>
                     <div className="mb-2">
-                        Programming, Databases:
+                        Programming, Technical Skills:
                     </div>
                     <ul className="ml-6 list-disc">
-                        <li>Python, Flask</li>
-                        <li>JavaScript, TypeScript, React, Node</li>
+                        <li>Python, Flask, FastAPI</li>
+                        <li>JavaScript, TypeScript, Next, React, Node</li>
                         <li>Rust</li>
                         {/* <li><span className="text-gray-800/60">Experimenting with</span> Go</li> */}
                     </ul>
                     <div className="text-base mt-2 text-gray-400">
-                        (MySQL, MongoDB, Linux, Docker, Next.JS, Vercel, Firebase, GCP, AWS, Tailwind)
+                        (MySQL, MongoDB, Linux, Docker, Vercel, Firebase, GCP, AWS, Tailwind)
                     </div>
                 </div>
                 <hr className="mt-6 mb-6" />
