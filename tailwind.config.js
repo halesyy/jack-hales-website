@@ -78,9 +78,9 @@ module.exports = {
         // "hard": "3rem"
       }
     },
-    fontFamily: {
-      "sans": ["Ubuntu", "Open Sans"]
-    }
+    // fontFamily: {
+    //   "sans": ["Ubuntu", "Open Sans"]
+    // }
   },
   plugins: [nextui()],
   variants: {
