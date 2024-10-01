@@ -22,7 +22,7 @@ let ModalShorthand = ({text, modalContent}) => {
                     <ModalHeader className="text-3xl font-bold">
                         {text}
                     </ModalHeader>
-                    <ModalBody className="max-h-[70vh] overflow-y-scroll text-2xl pt-5">
+                    <ModalBody className="max-h-[70vh] overflow-y-scroll text-xl leading-7 pt-5">
                         {modalContent}
                     </ModalBody>
                     <ModalFooter>
@@ -88,7 +88,7 @@ let IndexPage = ({ ...props }) => {
                         <li>Music 🎸 🥁 🎹</li>
                         <li>History 📜</li>
                         <li>Italy 🇮🇹</li>
-                        <li title="Who isn't?...">Travel 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭</li>
+                        <li title="Who isn't?...">Travelling 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭🇻🇳🇮🇳🇴🇲🇦🇪*🇮🇹*</li>
                     </ul>
                 </div>
                 <hr className="mt-6 mb-4" />
@@ -112,13 +112,12 @@ let IndexPage = ({ ...props }) => {
                         Programming, Technical Skills:
                     </div>
                     <ul className="ml-6 list-disc">
-                        <li>Python, Flask, FastAPI</li>
+                        <li>Python, Flask, FastAPI, Typed Python</li>
                         <li>JavaScript, TypeScript, Next, React, Node</li>
-                        <li>Rust</li>
-                        {/* <li><span className="text-gray-800/60">Experimenting with</span> Go</li> */}
+                        {/* <li>Rust</li> */}
                     </ul>
                     <div className="text-base mt-2 text-gray-400">
-                        (MySQL, MongoDB, Linux, Docker, Vercel, Firebase, GCP, AWS, Tailwind)
+                        (MySQL, MongoDB, Linux, Docker, Vercel, Firebase, GCP, App Engine, AWS, Tailwind)
                     </div>
                 </div>
                 <hr className="mt-6 mb-6" />
