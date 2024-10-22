@@ -11,8 +11,8 @@ const Header = ({ ...props }) => {
             <div className="">
                <Link href="/" as={NextLink}>
                   <img
-                     src="/jack-hales-picture.jpg"
-                     width={125}
+                     src="/jack-hales-picture-harbour.jpg"
+                     width={150}
                      className={classnames("mx-auto rounded-full shadow-xl")}
                      alt="Jack Hales Picture"
                   />
