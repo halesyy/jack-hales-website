@@ -1,7 +1,8 @@
 // import { listArticles } from "lib/articles";
 
 const ARTICLE_IDS: string[] = [ 
-   "prime-number-research",
+   "prime-number-research-2022",
+   "prime-number-research-2024",
    "software-topology"
 ];
 

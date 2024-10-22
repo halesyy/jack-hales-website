@@ -46,9 +46,18 @@ let IndexPage = ({ ...props }) => {
                 />
             </Head>
             <SmallContainer className={classnames(
-                "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8",
-                // "border-[10px] border-indigo-600 rounded-t-lg",
+                "-mt-0 text-3xl leading-hard mx-4 md:mx-16 -mb-4 !rounded-b-none !p-8"
             )}>
+                <Link href="/article/prime-number-research-2024">
+                    <div className="bg-warning/10 mb-4 p-6 rounded-xl hover:scale-105 duration-200 text-black">
+                        <div className="text-foreground-400 text-sm mb-2">
+                            {new Date().toDateString()}
+                        </div>
+                        <div className="text-xl">
+                            <strong>Check out my latest active research on prime numbers!</strong> I'm enjoying experimenting with the chaos of prime numbers to better understand uncertainty and randomness. Reach out with any ideas or tips!
+                        </div>
+                    </div>
+                </Link>
                 <div className="text-center">
                     Software Engineer from Australia 🇦🇺
                 </div>

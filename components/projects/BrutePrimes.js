@@ -26,7 +26,7 @@ let BrutePrimes = (props) => {
 
          <p>
             My <a className="text-blue-600 underline" href="https://github.com/halesyy/brute-primes" target="_bruteGit">"brute-forcing primes"</a> project is an 
-            example of this. I also wrote an <Link href="/article/prime-number-research" className="text-2xl" as={NextLink}>article</Link> about it. 
+            example of this. I also wrote an <Link href="/article/prime-number-research-2022" className="text-2xl" as={NextLink}>article</Link> about it. 
          </p>
 
          <p>
