@@ -35,3 +35,20 @@ Now that I've preambled, I am going to update this with my findings as I find th
 Creating equations is an important piece of the puzzle. My first algorithm was very inefficient, and could take hours to find valuable equations by brute-forcing. My aim is to play around with building a quicker algorithm generator by understanding the form of equations deeper.
 
 I'm also concerned that there might be logical functions that are needed that do not exist in existing mathematics which are required to express the logical pattern of primes. I cannot determine this, but if needed, I will be able to bake in custom functions into this interpreter.
+
+- [This](https://github.com/halesyy/brute-primes/tree/main) is where I left off in April last year, and I did have an interesting idea - encoding equations into integer or float matrixes, so generating could done much quicker.
+- The messy initial approach to generating equations, which I did in [my first approach in Jan 2022](https://github.com/halesyy/lol-primes/blob/main/solver/iter.py#L59), is to load in an array of possible equation parts, and generate N parts to try to successfully get an equation. Test it. If it passes, it can be used. This leads to *some* valid equations, but most aren't.
+- I'm going to have a go at building an array-based interpreter which can then construct into an expression. I am skeptical, but it might yield some better and more efficient analysis.
+
+The above are 3 approaches to creating equations.
+
+### The best we've got from attempt 1 and 2
+
+The best equation I was able to fit was:
+
+> 3*log(x,7)
+
+Also:
+
+> e^cos(x) + e*x
+

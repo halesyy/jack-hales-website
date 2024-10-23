@@ -7,3 +7,7 @@
 .modal-content p {
    @apply py-2;
 }
+
+a { 
+   @apply text-primary underline;
+}
