@@ -63,7 +63,15 @@ I will review this component in the future, once I have a working end-to-end fit
 
 To fit the values, I have created a separate function which takes in the results of the expression, as well as the primes it is to be tested against. I'm using a cumulative absolute difference, to test against the best values. I've written this out, and now I'm going to the shops and will leave this running during that time to see what it can produce. This is **the most inefficient version of what I am attempting to create** using the new version, to test the approach. [See here](https://github.com/halesyy/prime-number-research/blob/b053f3cd8d001def0ac8cd5572f4d7d4cd9bddf5/primes/fitter.py#L78).
 
-### The best we've got from attempt 1 and 2
+### Properties
+
+**Properties** are important, as they define what we're looking for in an equation. A straightforward one for prime numbers is:
+
+- **N+1 prime number > N prime number** - every prime is larger than the last.
+
+This leads to an optimisation in the result checker, which would normally have to check over N primes we're testing against.
+
+### Reminder: The best we've got from attempt 1 and 2
 
 The best equation I was able to fit was:
 
@@ -72,4 +80,51 @@ The best equation I was able to fit was:
 Also:
 
 > e^cos(x) + e*x
+
+These are interesting prime-fitting equations.
+
+## 24th of October, 2024
+
+It's clear the new modified numeric equation builder is slow. We know from the previous iteration that the above equations can exist. They would be represented as an array as such:
+
+```py
+[
+   3.00, # 3.00 float
+   2, # *
+   14 # log(x, y)
+]
+```
+
+Conditions:
+
+- A randint of 3 (1% chance)
+- y=7 (we have a range that steps from -10 to 10 for y values)
+
+Creates:
+
+- `x*log(x,y)`
+
+When inputting this manually, we get a quite bad fitness level when we're stepping x=1,2,3, ...
+
+In fact, y=7 is meant to be the best fitness of this equation. But we do not see that at all.
+
+At a x step of 1, we see the best fitness is at y=3. The fitness being `1,185,775` (absolute cumulative difference to the first 1,229 primes).
+
+What I recall from the previous project, is that there is a weird difference when we step by x=2. When we apply it here, we get what we were seeing in the past. At x=2,4,6,8,10,..., we get the best fitness at y=7, and a cumulative absolute difference of `65,995`.
+
+When we narrow down from 6-8, stepping by 0.001, we get the following fitness plot:
+
+![Y values over x*log(x,y)](/y_vs_fitness.png)
+
+The minimum in the test is y=6.84, at a fitness of `23,710`.
+
+For your interest, here is a figure of the equation alongside the prime numbers:
+
+![Primes versus best-fit x*log(x,y)](/primes_vs_best_fit.png)
+
+It's strikingly well-fit at this size.
+
+And, as I am sure you are wondering, here is the difference between these - to get a slightly closer look into one of prime numbers radically beautiful visualisations:
+
+![Difference in prediction and primes of x*log(x,y)](/difference.png)
 
