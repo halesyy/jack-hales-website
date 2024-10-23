@@ -42,6 +42,27 @@ I'm also concerned that there might be logical functions that are needed that do
 
 The above are 3 approaches to creating equations.
 
+#### Creating Equations - Numeric
+
+The first dot-point was never integrated, but I believe it is a good quickly approach. The aim is to embed the discussed expression tokens (cos, sin, (, ), etc) into a matrix. One difficulty I had with this was the embedding of floats into an equation, which I think can be **solved with types**. Python distinguishes between integers and floats, and we can distinguish `1.00` from `1`. This way, we can leave ints for expression tokens, and floats for equation float-representations.
+
+[My first successfull (messy) implementation](https://github.com/halesyy/lol-primes/blob/main/solver/iter.py#L159) walked through an algorithm like:
+
+1. Generate an equation length from 1-100.
+2. Make a strand (input: length): this is a series of letters (a, s, c, g) which correspond to **attachment**, **substitutable**, **constant** or **glue**.
+3. Make an equation by supplementing the letters for their possible values (glue = +-*/, etc).
+4. Check the equation with a sample response to see if it's valid.
+
+This worked well, and one assumption I am realising now is that it always started with an "attachment" to start. This was X, PI or E.
+
+Upon implementing a very basic version to get started, raw compute suffices to build some successful equations. See the code [here](https://github.com/halesyy/prime-number-research/blob/063619a936f005daa69d203464aee21f6ba33562/primes/expressions/generator.py#L104).
+
+I will review this component in the future, once I have a working end-to-end fitter.
+
+### Fitting to primes
+
+To fit the values, I have created a separate function which takes in the results of the expression, as well as the primes it is to be tested against. I'm using a cumulative absolute difference, to test against the best values. I've written this out, and now I'm going to the shops and will leave this running during that time to see what it can produce. This is **the most inefficient version of what I am attempting to create** using the new version, to test the approach. [See here](https://github.com/halesyy/prime-number-research/blob/b053f3cd8d001def0ac8cd5572f4d7d4cd9bddf5/primes/fitter.py#L78).
+
 ### The best we've got from attempt 1 and 2
 
 The best equation I was able to fit was:
