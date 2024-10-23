@@ -75,11 +75,11 @@ This leads to an optimisation in the result checker, which would normally have t
 
 The best equation I was able to fit was:
 
-> 3*log(x,7)
+> **x*log(x,y)** (y=7 to start, x steps by 2) - tested below further
 
 Also:
 
-> e^cos(x) + e*x
+> **e^cos(x) + e*x**
 
 These are interesting prime-fitting equations.
 
@@ -127,4 +127,17 @@ It's strikingly well-fit at this size.
 And, as I am sure you are wondering, here is the difference between these - to get a slightly closer look into one of prime numbers radically beautiful visualisations:
 
 ![Difference in prediction and primes of x*log(x,y)](/difference.png)
+
+Technically, the above is all of our model errors. It becomes quickly clear why this problem has complexity baked into it - to somehow quantify this complexity into an equation. This relates back to the discussion on chaos theory (which I have studdied nothing on), and is where this article starts to touch area I've not been at before. The above are errors that accrue over time, so let's look at how they span over 1,000,000 primes:
+
+![Difference in prediction and primes of x*log(x,y) for 1 million primes](/difference_1000000.png)
+
+Remember that **this is still with our y=6.84** value we found through fitness. If we go back and try to fit a best y value with our million smaple-set, we get a new fitness value: *y=56* brings us to a error rate of:
+
+![Difference in prediction and primes with a new fitness](/difference_fitted_1000000.png)
+
+Going down this rabbit hole, similar to plotting the minimum value of y-values above, moves us into **overfitting territory**. What strikes me (and I don't want to get narrowed down on this idea), is that the new goal should instead be as follows:
+
+> Attempt to flatten this curve at large N. If there's a way to flatten this, and get differences closer to 0 as N rises higher and higher, then the model difference is a more attackable problem.
+
 

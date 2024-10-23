@@ -11,3 +11,7 @@
 a { 
    @apply text-primary underline;
 }
+
+blockquote {
+   @apply p-4 px-10 bg-foreground-100/80 rounded-r-2xl border-l-2;
+}
