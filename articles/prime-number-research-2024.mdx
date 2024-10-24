@@ -242,8 +242,53 @@ This is an immediate validation that there is more possible variation, since we'
 
 I think this comes together well with the above next steps in my mind.
 
+### Optimising the Constant (C)
+
+When optimising the constant, it can be brought down with the following slight digit changes:
+
+![Constant tweaking results](/constant_tweaking.png)
+
+This creates the difference from the primes of the following:
+
+![Constant fitting best difference](/difference_best_fit_constant.png)
+
 ### Next Steps - Optimising, and Grouping Primes
 
-- It may be valuable to tweak this `0.7964759083371821` constant in the modified equation.
+Next ideas:
+
+- It may be valuable to tweak this `0.7964759083371821` constant in the modified equation WITHIN the groups, to find how this adjusts.
 - It may also be valuable, once this is worked out, to check at the optimal fitness as the groups scale. We can break up the 1,000,000 primes into groups of 1,000 groups of 1,000.
 - Modelling and plotting these might provide an interesting scale that can be seen - or some randomness that cannot be tamed. We'll see!
+
+With optimising, there is a possibility that X, or other values, might need to be adjusted across a separate equation. First, I will try adjusting the separate constant.
+
+### Nearness
+
+Something I have noted when looking at the difference charts, is that **there seems to be some form of nearness bias, or gravity**. What I mean by this is that no subsequent "draw from the bag" for the next difference value is radically different from the previous difference. In fact, they seem to cluster, and follow trends, or mean-reversion. When I take the second-delta of the difference (delta of the difference), we see this chart:
+
+![Delta of the difference values](/difference_delta.png)
+
+This displays two properties:
+
+- Positive values could skew further and further into infinity.
+- Negative values seem to follow a inverse log asymptote (if that makes sense).
+
+If we then use log scales for the Y axis of the delta difference for the first 1,000,000 primes, we see:
+
+![1,000,000 log Y difference delta](/difference_delta_log_y)
+
+And zooming into the first 250 WITHOUT log of the above series, we see:
+
+![First 250 primes NO LOG difference delta](/250_primes_difference_delta_nolog.png)
+
+(For this one, I recommend right-clicking, and open in another tab, as it's better to see it on a larger device.)
+
+With LogY:
+
+![First 250 primes log Y difference delta](/250_primes_difference_delta_log_y.png)
+
+Both show interesting patterns, though with LogY it seems fuzzier locally, whereas at scale, it seems as if there's a bias towards negativity. The problem then might simplify into: trying to balance positive difference and negative difference at scale, which we might solve with tweaking in groups.
+
+For the nolog plot, the bottom line of the pattern looks like a plot, as well as the band above it looks like it follows with constant fixture.
+
+I want to remind myself and readers that **it is not my job to reason about this crazy randomness** to solve the problem - because I cannot plan the answer in any way. It's too wild. So, I will keep stepping forward cutting up little problems into heuristics, and trying to reason about the properties of what is occurring here.
