@@ -8,7 +8,7 @@
    @apply py-2;
 }
 
-a { 
+.mdx-content a { 
    @apply text-primary underline;
 }
 
