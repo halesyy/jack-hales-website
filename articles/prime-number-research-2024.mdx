@@ -1,5 +1,5 @@
 ---
-title: "Prime Number Research - 2024"
+title: "Jack Hales Prime Number Research Journal - 2024"
 description: "A brief overview of the renewed research I've been doing on prime numbers in 2024."
 date: "23 October 2024"
 ---
@@ -145,3 +145,105 @@ From here, as I've fixed the equation modeller also, I am going to test some mor
 ### Equation Modelling
 
 My knack is that our equations are platonic (Talebian term) in a sense that we're modelling in a standard logical language, something of which might require complex, or non-platonic randomness and chaos. This is just a hunch - but at the same time I am really shocked at how well a basic equation can model the randomness of prime numbers. I do not understand logarithms in my soul, only on the surface, so this is an area I am going to look further into.
+
+### Equation Interfacing 
+
+There is an existing complexity which I accidentally noticed - testing at x=2,4,6 rather than x=1,2,3 is inherrently weird - but worked well. It's possible that a rate change in the x increment is a meta-equation which can reduce complexity in the equation itself, and also lends itself to a higher rate of experimentation.
+
+I'm considering, though find it hard to grasp, building a more dynamic interface which is able to accomodate this. At the moment, I am using the following lines to for example bake in a 2,4,6 step in x values:
+
+```py
+X_INC = 1
+X_TIMES = 2
+...
+for x, _ in enumerate(primes):
+   x = x + X_INC
+   x = x * X_TIMES
+```
+
+By creating an equation to build X values (2x, x^2, or otherwise), this starts to give light to the idea of combining multiple series of equations to solve the problem. This might be unnecessary, as this can also be represented as:
+
+> (2 * x) * (log((x*2), 7)) at x-step = 1
+
+Which provides the same output as stepping by 2. By being able to accomodate this structure (which cannot currently), this can be tested for efficacy before adding this complexity.
+
+I've done this by adding another set of options for the expression builder with:
+
+```py
+ERROROUS_ADDITIONS = [
+   "log", # 18
+   "sin",
+   "cos",
+   "," # 21
+]
+```
+
+Which can embed the above function on x-step=1 by embedding the following:
+
+```py
+ex_str = supplement_ops(
+   [6, 2.00, 2, 10, 7] + # (2x)
+   [2] + # \*
+   [18, 6, 2.00, 2, 10, 21, 11, 7] 
+) # returns: "(2.0*x)*log(2.0*x,y)"
+```
+
+The question then becomes:
+
+> Is the problem space better if fractionated into multiple equations, or is it better to attempt to build a mono equation?
+
+And I have no idea.
+
+When running this modified generator with **more possible equations**, and also **a higher chance of a failed equation**, some equations and their 1,299 fitness are:
+
+- Cut down length of equations from 100 to 25, since most equations so far have fit there. I will lift this in the future to not be fooled by randomness.
+- **`((x*sin(sin(1.1717823427685636)))*log(x,y)) at y=2:`** 17,323 fitness (great one-shot result before optimisation)
+
+### ((x*sin(sin(1.1717823427685636)))*log(x,y))
+
+Taking this equation, and y-fitting, we find it gets most comfortable at `y=2.0026` (14533.53 fitness). Narrowing down further, we get a miniscule smaller at `y=2.002564` (14533.16 fitness). Tiny difference in a higher precision.
+
+At 1,000,000 primes, we have the following fitnesses:
+
+- **Prior x*log equation fitness:** 811,473,649
+- **New sinusoudal fitness:** 511,239,573
+
+New sinusoidal plotted:
+
+![Sinusoidal equation plotted](/primes_vs_best_fit_sinusoidal.png)
+
+And difference:
+
+![Sinusoidal difference](/difference_sinusoidal.png)
+
+As you can see - the difference is negative (grows larger than the primes at scale).
+
+What I feel is a property for a prime number expression or equation, is something like:
+
+> It cannot be fitted to a certain area (first 1,229), and then expect that fitness to scale further to a larger area.
+
+It's also noticeable the constant in this equation: `1.1717823427685636`. This is actually a constant inside a sin(sin(...)) function, which then resolves this constant to `0.7964759083371821`. The simpler equation is then `((x*0.7964759083371821)*log(x,y))`, which brings us right back to the start.
+
+**I was fooled by randomness - and tokens.**
+
+(I was going to remove this section, but I am committing to the format of a journal, to outline the process and how it felt to move from each step to another.)
+
+This is bitter-sweet - and let me explain why.
+
+### Multivariate
+
+I was considering whether or not multivariate (beyond X and Y) could help in the complexity of primes. In my handwritten journal, I wrote the following note:
+
+> (With the broader equation builder, which can facilitate 2*x and log((2*x), y) for example) we have a broader dynamic chance. For example: we can multiple x by 2 different equations, OR constants. They are both variables.
+
+What I meant by this was that with the broader equation builder - although it operates with a much larger error change, the "possible" space is larger. Like monkeys typing randomly to make shakespeare - if you restrict the alphabet or wordlist, you might miss dickinson.
+
+This is an immediate validation that there is more possible variation, since we've created a multivariate example within ~15 minutes of running this random generator - which is *more* fit to the prime numbers than previous models.
+
+I think this comes together well with the above next steps in my mind.
+
+### Next Steps - Optimising, and Grouping Primes
+
+- It may be valuable to tweak this `0.7964759083371821` constant in the modified equation.
+- It may also be valuable, once this is worked out, to check at the optimal fitness as the groups scale. We can break up the 1,000,000 primes into groups of 1,000 groups of 1,000.
+- Modelling and plotting these might provide an interesting scale that can be seen - or some randomness that cannot be tamed. We'll see!
