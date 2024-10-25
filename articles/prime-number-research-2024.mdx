@@ -268,6 +268,8 @@ Something I have noted when looking at the difference charts, is that **there se
 
 ![Delta of the difference values](/difference_delta.png)
 
+(25th of October addition: I was thinking this yesterday, and forgot to write it - the above looks like a very fuzzy positive upside, with a very predictable downside variant - as it's following some sort of negative curve.)
+
 This displays two properties:
 
 - Positive values could skew further and further into infinity.
@@ -300,3 +302,15 @@ Fitting to the groups is an interesting engineering problem. On one hand, we're 
 > Prime numbers are tricky, like their distribution. We may want to do vector analysis on the series of multivariate values, rather than simply going for the single "best" value for each group of 1,000 primes. There might be a slightly less optimal set of values which fits the group, but it might correspond to a better trend in long-term performance. We're looking for signals, not just noise - but we'll start with the best in the groups first to see if there's an interesting trend there.
 
 As I do some testing in the background, I will call it a day. Great progress, and lots to ponder on. I want to take all of this expansive properties, and compress it down to keep it simpler.
+
+## 25th of October, 2024 
+
+### Refresh, Review, Reprise, Refactor?
+
+Alright - a lot of surface area was generated yesterday by narrowing down to trying to do overfitting to the prime curve. **We know that *local optimisation* of fitness does not equate to *large optimisation* and fitness.** What does this mean then? Are we destitute to be stuck in a machine-learning-type overfitting or underfitting problem? We can't be probabalistic about this, as we're wanting to work out what's going on here. Even a *tiny* miscomputation in the algorithm equates to an enormous deviation, as per our chaos, and **three-body-problem** discussion. With this in mind, it's further clear that optimisation is not aiming to "crack the primes", it's rather an attempt to review the outputs, and see if we can understand the system, and trajectories, to build something purer, and closer to the prime curve.
+
+I think a brief refactor may be of value - to get components into a clearer picture so I can move forward with more testing.
+
+### Property: Negativo Contro Positivo (Negative Versus Positive)
+
+If you look at the above **Difference Delta Between Prime Numbers And Best Fit** (24th of October), I added a note that I remembered, where it looks to have a predictable volatility: volatile upside (positive), and a predictable downside (negative). A future experiment I will do will be with the actual data points, in a more frequenty analysis format.
