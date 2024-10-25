@@ -314,3 +314,45 @@ I think a brief refactor may be of value - to get components into a clearer pict
 ### Property: Negativo Contro Positivo (Negative Versus Positive)
 
 If you look at the above **Difference Delta Between Prime Numbers And Best Fit** (24th of October), I added a note that I remembered, where it looks to have a predictable volatility: volatile upside (positive), and a predictable downside (negative). A future experiment I will do will be with the actual data points, in a more frequenty analysis format.
+
+### Precision On Single Primes
+
+I had an idea when looking at groups, and considering looking at smaller groups - like 100, instead of 1,000. Out of nowhere, the idea popped up:
+
+> What if we look at the values required to get perfect precision on a single prime? In other words, let's try tuning to a group of 1, where X stays stable, and we modify Y (log of), A (coefficient of x * ... term), and B (log(x*B) coefficient).
+
+By doing this, I quickly experimented and found there were interesting trade-offs with precision. For the first few primes - I could get good precision. With the intervals I was stepping (0.1), that quickly started to face at higher primes, like the 100th, and 1000th.
+
+I then thought: **what if I could eliminate multivariate?** Where I began to simplify the equation by removing variations on single components.
+
+I removed A variations - precision was still there.
+
+I removed B variations - precision went away.
+
+I added a higher precision to Y, and it came back. I had to move it to a `0.00001` step interval for Y, for it to return to finding a close-enough (within `0.00461` precision) result to the prime, with a Y value of `2.39269`. This is fascinating!
+
+When I do the same for the other variables (singling them out as being adjusted), and Y=7 (how I found this expression first), the following properties occur:
+
+(101th Prime 547)
+
+- `A`: 0.0011 precision at A=2.283520.
+- `B`: incredible precision at B=373.763.
+- `Y`: 0.000735 precision at Y=2.344690.
+
+(501st Prime: 3581)
+
+- `A`: 0.00131 precision at A=2.237360.
+- `B`: incredible precision at B=2191.157000.
+- `Y`: 0.00434 precision at Y=2.386280.
+
+(1001th Prime: 7927)
+
+- `A`: 0.009994 precision at A=2.23048.
+- `B`: 0.000691 precision at B=4920, and incredibly close precision at B=4920.007.
+- `Y`: 0.004606 precision at Y=2.392690.
+
+With this in mind, it's important to realise that we can likely fit any equation to the primes in order to manufacture a series. Though, if we were doing this trivially, we'd likely get something very close to the prime numbers in terms of relationship to the values.
+
+With the above, we can see that the underlying equation has values which show some sort of pattern (the XX in 2.XX for A may for example be a prime number in disguise, and fool us), and we can also see B grows as the primes grow (it may grow by the prime number increase). We can also see that Y fits this above-2 value, and grows positively (from sample data so far, whereas unlike B in our sample data, which we do not know its growth yet).
+
+Either way - we have some more exploring to do, and I'll begin to work on a precision finder for each of these value, and I feel as if this was a very interesting find for the equation. **Off to data mining so we can plot these values over the primes!**
