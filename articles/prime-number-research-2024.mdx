@@ -376,3 +376,59 @@ Some following thoughts:
 
 - We want to do two things: find the best value to fit the equation to the prime, and we also want to capture the value range which results in an output which *rounds to the prime*. This is so when if we're fitting an equation to this, we can look to fit to the range, as well as the most precise, to see if there's a difference.
 - Idea: When we find a best-fit range of values (values that would result in a value which is roundable to the prime), can we find a whole fraction which fits that value? If so, can we find a pattern in the whole fractions, or the possibility of a whole fraction-ness?
+
+### Reviewing The Results
+
+It's a slow process, and I've only done the bottom 1,229 so far, so I do not want to get ahead of myself. It is utterly fascinating seeing this pattern. I am going to go for a walk, let it run a bit more, ruminate, and come back to start analysing the data.
+
+- When A lowers from its prior most optimal value, Y-optimal raises higher for it's optimal value to arive at the prime.
+
+<div style={{margin: "20px 0;"}}></div>
+
+## 25th of October, 2024
+
+I've not spent a lot of time on the problem today in terms of the hard stuff, but I have been thinking about it quite a bit. The data miner has been built, and I am going to do some analysis on the data, as well as compute with the optimal values to make sure I've got the resulting values being parsed correctly.
+
+Below is a plot of the fittest Y value to get the prime at N for the equation. As a reminder, I will include the equation which is being optimised (without the other variables) above each plot. Below is the Y-plot:
+
+### Y-Fitting: x * log(x, Y)
+
+![Y-fit equation](/y_fit.png)
+
+I was going to remove the first few primes from the sample to scale it better, but I thought it would be useful to see it how I see it - like a wild plot which I can't remember the name for. `x sin(x)` (since it's sort of sinusoidal)?
+
+With the front clipped (so you can see the smaller segment better), we get this:
+
+![Y-fit from-1000 clipped](/y_fit_clipped_100.png)
+
+And the first 500 primes:
+
+![Y-fit upto-500 clipped](/y_fit_clipped_upto_500.png)
+
+### A-Fitting: (A * x) * log(x, 7)
+
+A-fit macro chart:
+
+![A-fit equation](/a_fit.png)
+
+### B-Fitting x * log(x * B, 7)
+
+B-fit macro chart:
+
+![B-fit equation](/b_fit.png)
+
+### There's a lot to unpack here
+
+The above are quite thought-provoking.
+
+- Y-fit seems to bias negatively from the longer-term mean in the sample size.
+- A-fit seems to bias positively from the longer-term mean in the sample size.
+- B-fit has a positive, growthy curve, but looks light it might be slightly curving.
+- I'd like to look at A+Y in a chart, to see how they behave (on initial watching, I did notice that as A increased prime-over-prime, Y tended to decrease, so this might be interesting to look at).
+- Y-fit looks stable at ~2.4, but might be ever so slightly increasing.
+- The further you go into the primes, the slighter the precision adjusts 
+- B going up and down is quite fascinating: this is because it's known we're looking at an ever-ascending prime series, but these whole numbers for B can be better fit for future primes at a lower value. The B-fit was stepped by an interval of `1`, since it was a very high figure to reach compared to the sensitivity of A and Y. This might reveal something about the weirdness of primes: what we're observing here is that **some future primes are better fit to lower B values, although there might be some series of compatible B-values which have a more consistent looking curve - since the range is wide in B values which can predict the prime**. This needs some more thought, as I'm struggling to wrap my head around it.
+- A further variable I have not controlled yet is X. I am curious how, if we keep the equation at `x * log(x, 7)`, what X values are required in order to hit the primes. This is a different way of looking at things, since it looks to a fit curve, then asks what the input is for the N. So it's more like trying to find an equation for the right X value on the curve.
+
+Let's start by looking at the overlapping Y and A charts:
+
