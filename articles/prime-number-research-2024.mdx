@@ -432,3 +432,74 @@ The above are quite thought-provoking.
 
 Let's start by looking at the overlapping Y and A charts:
 
+![Y & A Overlapping Marco Fitness](/y_a_fittest.png)
+
+And clipping the fronts, and standardising the difference from the first value to start from the same spot:
+
+![Y & A Standardised overlapping from 150](/y_a_normalised_from_150.png)
+
+And Y + A plotted from the 100th prime:
+
+![Y+A from the 100th prime](/y_plus_a_from_100.png)
+
+And finally, the delta between Y and A:
+
+![Y & A Delta](/y_a_delta.png)
+
+A few additional thoughts:
+
+- `A` and `Y` fitnesses seem negatively correlated, though there is a bias for `Y` fitness to slowly grow out of this correlation over the long-term in the sample we have.
+- There might be a better way to understand the gap between these values, to understand their distance over time better?
+- `A` fitness seems to trend negatively, while `Y` trends positively. **Remember:** these are the optimal values to get as close to the prime as possible, which could be a bad anchoring point to center on. This is because from the data mining I did, there is a range of values which the output can be rounded to get to the prime number (found using abs fitness < 0.5). I will do analysis in the future on the ranges.
+- If it was a choice between trying to pinpoint `A` fitness (trending negative) and `Y` fitness (trending positive), it seems an easier problem to wrangle to-negative complexity.
+- `A` must negatively be approaching some infinite bottom point, as the `(x * A)` component cannot reach 0, as it would no longer produce a positive prime number.
+
+### Confirmation Bias
+
+We're looking at a small sample of data. It's possible that there's a breaking point where we reach a threshhold, and things adjust. I will aim to keep researching this research space to better understand it, as it feels like the right pathway (understand what's infront of me and already difficult to compute, then go there).
+
+
+### Y-Fit Deltas, and A-Fit Deltas
+
+(The below are all from the 100th prime to be able to better visualise the pattern on a smaller figure.)
+
+Y-fit delta between each value adjustment:
+
+**I just had a mind-melting moment. A true "WTF?" when plotting the deltas between Y-fitness and A-fitness.**
+
+I don't really know what to make of it yet, but this **idea of capped upside and downside** is returning.
+
+Take a look at the rate of change (delta) for Y-fitness:
+
+![Y-fit deltas](/y_fit_deltas.png)
+
+And A-fit deltas:
+
+![A-fit deltas](/a_fit_deltas.png)
+
+And now, overlapping A and Y deltas:
+
+![Y-fit deltas](/y_fit_delta_with_a_fit_delta.png)
+
+I'm sure this is just bamboozling once again, but I feel as if it describes the slow tilt-up with any attempt at fitting the prime curve. We see a semi-related, semi-correlated inverse relationship, though it slightly deviates over-time. This makes me want to investigate the delta of the difference between Y-A chart to see what manifests there:
+
+![Y-A Diff Deltas](/y_a_diff_deltas.png)
+
+I saw this here, but I did not notice it in the above charts: they seem to also have a capped upside/downside, but it tends to have more volatility also.
+
+Zooming in, the choice of up or down seems random. I will reflect on the above for a while, but I wanted to do some frequency analysis to see if there's some pattern in the delta's movement. Easier to understand, there is:
+
+1. The size of the move (?)
+2. Whether it was a positive domain move, or a negative domain move
+
+And, if (2) can be solved, it all helps in the grand scheme.
+
+So, I've done some frequency analysis before I go to bed, and here is a positive value for the number it was positive, then negative for how many it was negative for:
+
+![Y-A Difference, Delta, Frequency Analysis](/y_a_diff_delta_frequency_period.png)
+
+And, the clipped first 75:
+
+![Y-A Difference, Delta, Frequency Analysis upto 75](/y_a_diff_delta_frequency_period_upto_75.png)
+
+And I leave you with the above for this day at 11:45PM. Some further frequency analysis on the pulls might be of interest - for example - by checking the frequency of 1's, 2's, etc - maybe a gaussian will emerge? I'll believe it if I see it!
