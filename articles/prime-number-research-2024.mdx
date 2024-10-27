@@ -553,3 +553,20 @@ Here is a plot of the up-to 1 million primes:
 This further provides more experimentation allowance, since I can now adjust multivariate values (Y=7 for A, for example), to see what can happen (can adjusting Y reduce volatility in A, or increase it, or nothing?), and I can also compute the fitness values much quicker.
 
 At a minimum, I feel as if I am answering the confusing questions I had in 2022/2023 regarding **why the heck do you fit a equation to the primes at 0-10,000, for it to all fall apart**. There are still many questions and tests to do, but this is a fascinating sub-area of exploration.
+
+### What are we fitting?
+
+I had the thought to what if we're over-fitting the values. What if this just represents another representation for the prime in a hidden way? I think that could be a piece of it, though I tried running the Y-fitter on ascending X values, trying to fit the X output, and it's a linear curve like Y=X.
+
+So what we're currently tweaking is:
+
+> Assuming a linear X (1, 2, 3), what log base (Y) do we need to get the Xth prime?
+
+<div style={{margin: "20px 0;"}}></div>
+
+### 1m Y-Fit Primes Log
+
+Below is a figure of the primes Y-Fit with a X-scale which is logarithm:
+
+![1m y-fit x-scale in log](/y_fit_1m_xlog.png)
+
