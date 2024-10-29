@@ -577,3 +577,16 @@ Hello! I'm in Sydney at the moment, preparing to fly to Bali tomorrow with my pa
 I've plugged in the 1 billionth prime (22,801,763,489) into the tweaker for Y, and got a Y of `2.4814544815638517`. For the trillionth prime (29,996,224,275,833), the Y value is `2.5121776604449253` - cracking 2.5!
 
 For A, on the other hand, the A value for the billionth prime is `2.141080625935799`, and trillionth is `2.112479195277878`. We're seeing Y go up, and A go down. I'm presuming we can reach infinitely large primes if we're able to crack this, but the race to infinidecimal on the other side will make it challenging.
+
+## 29th of October, 2024
+
+This means that:
+
+A-fitting: negatively biased.
+Y-fitting: positively biased.
+Y-fitting growth overpowers A-fitting negative growth.
+
+Per `x * log(x*B, 7)` being fit, it's quite linear, and over time gets closer to linearity. At the start it's quite volatile, and over higher N's, it begins to look linear. Here is a plot with X and Y log:
+
+![B-fit X & Y log scale](/b_fit_x_y_log.png.png)
+
