@@ -605,3 +605,35 @@ A bias of a higher single frequency towards the positive, rather than negative a
 Overlapping:
 
 ![Y and A overlapping frequency of delta direction adjustment](/a_y_fit_overlap_plot_hist.png)
+
+## 3rd of November, 2024
+
+I've been enjoying Bali for the last few days, drinking Bintang's and having a good time. I've thought over this problem for a bit, and also spent some time doing some statistical tests that ChatGPT helped me understand. Some examples are:
+
+- **Augmented Dickey-Fuller (ADF) test:** data is "static" (mean does not adjust over periods) on Y-delta set
+- **Kolmogorov-Smirnov Test:** does not indicate a standard distribution, on any of the datasets.
+
+As I've been going deeper on looking into standard statistical methods to analyse this data, I feel as if I am moving further from what has gotten me to this position in the first place. It was interesting looking at skewness, kurtosis, mean, and standard deviation, and I know enough Talebian remarks to know to keep tinkering, as well as look at the conventional knowledge when necessary. To summarise: it feels like more noise, than signal, using the conventional statistics, and the unusual names (no hate to the authors - their work is valuable, but I don't want to keep the cool word "Kolmogorov" in my head while I am working on puzzles).
+
+I also looked at the X values which fit to the curve, which I will do more research on.
+
+From here, I want to look at the following:
+
+- Using different ways of looking at deltas: looking at not just difference, but percentage changes, and investigating other ways of looking at data deltas.
+- Looking more at the pseudo-gaussian-looking distribution of the positive and negative periods.
+- Looking into the amplitude, and seeing if there's any pattern there.
+- Looking at the Y values and their neighbours, to see if there is any need to actually adjust the Y value between primes. If there are trends where there's no need to shift the Y value, I want to know how long for, and plot it.
+- Group values, and see if there are any trends. I've noticed in the Y-fit difference delta-delta, there are interesting looking pairs of Y values which follow an unusual trend of 3 positive Y's, then 3 negative Y's, as well as values that are very close together.
+- Look at the x-fit values of the equation.
+- Look at potential ways of classifying volatility of series to indicate how volatile the series is (this is something I notice when I dig into the delta delta delta ... delta series of a series - the prime series has no "floor" of volatility, but there might be a way to classify if the series is more predictable than another) - cumulative error to the mean, or something?
+
+Below, I will begin to refactor, and get things back into shape.
+
+### MAD, CAD, SAD
+
+[A ChatGPT discussion on using MAD, and CAD, for looking at volatility](https://chatgpt.com/share/672704a5-d748-800f-951d-9c47bed1809c).
+
+One candiate for classifying the volatility of a given series, might be to look at the series MAD (mean absolute deviation), and CAD (cumulative absolute deviation). This can be done by taking the mean of the series, then summing the absolute error from the mean. The mean can then be taken by dividing the cumulative value by the length of the series.
+
+To normalise across multiple domains, we'd need to normalise in another way than we do currently. When doing N difference-deltas, the values change wildly. This fits perfectly into looking at new delta formats, of which I believe percentage deltas might be a valuable way to look at looking at the multiplicative changes, as well as try out our new error reading.
+
