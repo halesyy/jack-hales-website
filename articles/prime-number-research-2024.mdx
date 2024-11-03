@@ -637,3 +637,99 @@ One candiate for classifying the volatility of a given series, might be to look 
 
 To normalise across multiple domains, we'd need to normalise in another way than we do currently. When doing N difference-deltas, the values change wildly. This fits perfectly into looking at new delta formats, of which I believe percentage deltas might be a valuable way to look at looking at the multiplicative changes, as well as try out our new error reading.
 
+Without normalisation, and instead using differencing, we see this trend (i=0 is without a delta):
+
+```
+0: Cumulative Absolute Error: 412.22664980219366, Mean Absolute Error: 0.00525142869630044
+1: Cumulative Absolute Error: 12.245210541465505, Mean Absolute Error: 0.00015599590483032107
+2: Cumulative Absolute Error: 18.664078700445422, Mean Absolute Error: 0.0002377710800607111
+3: Cumulative Absolute Error: 32.958655522779026, Mean Absolute Error: 0.00041988222845758895
+4: Cumulative Absolute Error: 60.773011335477, Mean Absolute Error: 0.0007742376657512292
+5: Cumulative Absolute Error: 113.57485893271077, Mean Absolute Error: 0.0014469425163098702
+6: Cumulative Absolute Error: 215.91894630252366, Mean Absolute Error: 0.0027508401659088726
+7: Cumulative Absolute Error: 409.19805442259155, Mean Absolute Error: 0.005213311773612131
+8: Cumulative Absolute Error: 786.7621861772942, Mean Absolute Error: 0.010023725139219038
+9: Cumulative Absolute Error: 1502.9569714895779, Mean Absolute Error: 0.019148631929182057
+```
+
+With normalisation using multiplication, we see:
+
+```
+0: CAD: 409.9202814226476, MAD: 0.005222380102972903, Mean: 2.416269020020983
+1: CAD: 4.92239738463249, MAD: 6.271209020830657e-05, Mean: 9.978725243008389e-07
+2: CAD: 321885.9494663943, MAD: 4.100928125089449, Mean: -0.8927910663009873
+3: CAD: 463436296524.5065, MAD: 5904399.242253961, Mean: -2877658.1039074394
+4: CAD: 888685701093.1577, MAD: 11322423.538243068, Mean: -225435.23483871602
+5: CAD: 1060074814545.8591, MAD: 13506202.40732162, Mean: 2256839.6436438635
+6: CAD: 5927620458707.524, MAD: 75523595.73824328, Mean: 33912450.2932923
+7: CAD: 24671665846026.152, MAD: 314344798.38478273, Mean: 119619755.40753777
+8: CAD: 35126696621113.21, MAD: 447559363.2045754, Mean: -206655960.85012862
+9: CAD: 3927080975254230.0, MAD: 50036707803.57053, Mean: 24907161415.62895
+```
+
+So, we do not get a better read of volatility - or we see volatility increase at depth.
+
+And with a logarithmic delta:
+
+```
+0: CAD: 409.9202814226476, MAD: 0.005222380102972903, Mean: 2.416269020020983
+1: CAD: 1.0701098485086775, MAD: 1.3633361979673728e-05, Mean: 1.5971013924538176e-07
+/Users/jackhales/Dev/prime-number-research/primes/precision_miner/uq_analysis/deltas.py:29: RuntimeWarning: invalid value encountered in log
+  d = (np.log(s1) / np.log(base)) - (np.log(s0) / np.log(base))
+2: CAD: nan, MAD: nan, Mean: nan
+3: CAD: nan, MAD: nan, Mean: nan
+4: CAD: nan, MAD: nan, Mean: nan
+5: CAD: nan, MAD: nan, Mean: nan
+6: CAD: nan, MAD: nan, Mean: nan
+7: CAD: nan, MAD: nan, Mean: nan
+8: CAD: nan, MAD: nan, Mean: nan
+9: CAD: nan, MAD: nan, Mean: nan
+```
+
+Which makes sense, since log values are small.
+
+With 1 + x in the log delta, we can go a little deeper:
+
+```
+0: CAD: 409.9202814226476, MAD: 0.005222380102972903, Mean: 2.416269020020983
+1: CAD: 3.472213248986966, MAD: 4.423652409146064e-05, Mean: 5.161604338429603e-07
+2: CAD: 5.177304217502216, MAD: 6.596048231647372e-05, Mean: 2.293725237169149e-07
+3: CAD: 8.989736292023549, MAD: 0.0001145335239141753, Mean: -8.448973252904579e-07
+4: CAD: 16.40981409444938, MAD: 0.00020907151440902174, Mean: 1.7755820384512643e-06
+5: CAD: 30.56834706119753, MAD: 0.00038946523113337966, Mean: -1.9607584593122482e-06
+6: CAD: 58.58615471516942, MAD: 0.000746444057170858, Mean: 9.58898120589133e-07
+7: CAD: 114.98918793785522, MAD: 0.0014650917098317714, Mean: 7.707736901095848e-06
+/Users/jackhales/Dev/prime-number-research/primes/precision_miner/uq_analysis/deltas.py:31: RuntimeWarning: invalid value encountered in log
+  d = np.log(1+s1) - np.log(1+s0)
+8: CAD: nan, MAD: nan, Mean: nan
+9: CAD: nan, MAD: nan, Mean: nan
+```
+
+Then doing log on the first delta, and absolutes, shows nothing significant but an increasing CAD over time.
+
+Although this has yielded nothing of substance (the CAD seems to grow at a multiple as we go down layers, that's about it), this does showcase a good way to gauge the error rate over time. **It also indicates that the least volatile layer to look at is the first delta.** This might constitute another principle, as well as an important thing to find - a series where the volatility shrinks at delta depth.
+
+In the series x^2, the difference CAD at depths would be:
+
+N = 1 2 3 4 5
+S = 1 4 9 16 25, Mean = 11, CAD = 10+7+2+5+14 = 38
+D1 = 3 5 7 9, Mean = 6, CAD = 3+1+1+3 = 8
+D2 = 2 2 2, Mean = 2, CAD = 0
+
+(CAD decreases at depth).
+
+\*The CAD is summing one less value per-series, though I hope the point is clear - that CAD could be a good proxy for the complexity/volatility/error of a series?
+
+This has provided a crumb of insight on the problem, but has demonstrated that the first layer of deltas is the least volatile. If there was a series that provided less volatility over layers, this would be something to look into.
+
+X, B, Y, and A fittest values (all T values), all grow in CAD complexity over time.
+
+### Y-Neighbours
+
+I want to see if adjustment is needed from the first Y-fit values, and see if there are periods where Y does not need to be adjusted, to do the closeness of the Y values, over N+1.
+
+I did this for Y, A and B (X would not make sense), and found nothing of interest here. There are periods of closeness, but they are not significant. This does not use period (min max) overlaps, this just uses the absolute value. I think there will be something in periods - where we can use the minimum period value based on the next period, to see if there's a way to minimise, or some way to step only up or down, to smooth out the Y fitness values given the range.
+
+To do this, it would be ideal to apply a percentage positive and negative band to the Y-fit value, so we can know the percentage band we're working in. E.g. if Y-fit is 2, and max/min band is 10%/10%, this means we can work within 1.8 and 2.2. This is a simple and good way to look at range, and there might be a relationship to the Y-fit bands as well to look into.
+
+
