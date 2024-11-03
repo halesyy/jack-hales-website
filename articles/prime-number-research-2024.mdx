@@ -811,3 +811,24 @@ Counter({
 
 By plot, there is not much worth sharing. The only noticeable pattern is that the 3-overlapping values arise in the periods where 2-overlapping values arise, which arise in the 1-overlapping group periods.
 
+Not much here.
+
+### Volatility of A values when adjusting Log-Y
+
+When adjusting the Y-log value and A-fitting, we can see that we can get to approximately ~2.5 in a Y value at a minimum in order to A-fit successfully.
+
+Volatility is lowest at 4.0, at a cumulative absolute deviation of `V=7.2204` over the multiplicative delta of the A-fit dataset. This is odd, as almost every other value is ~7.6 (occasional 7.5). Even 3.99 and 4.01 are 7.6 CAD.
+
+See the plot of the different Y values:
+
+![Too tired to alt-text this one](/a_4_7_fit.png)
+
+You can notice the reactivity to the values are lessened, though the plots share the same movement patterns. This is interesting - as it's dampened the amplitude to some small degree. Just changing the constant Y-value... Interesting...
+
+Further, another smaller trivial pattern is that the mean of the A-fit values increase as we increase the Y value.
+
+### Moving back to delta distribution frequency analysis
+
+There feels like there hasn't been as much progress using the above methods, but I still don't want to discount them. I want to move back to the idea of the distributions (pseudo-gaussian for the period of positive/negative changes in the Y-fit delta), and look at the magnitude of the change, to see if we can multiply them to get two distributions.
+
+An idea is that if we do get two distributions (run period, as well as magnitude of values changed), we might be able to normalise the data, or run the distribution over a time period to get the Y-fit value expected to be at a certain point. We could plot magnitude by summing the change over the N period of time (a simpler distribution), or plot the values within the period, to see if there's a common sum for that number of adjustments.
