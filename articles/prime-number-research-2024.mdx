@@ -850,3 +850,19 @@ Fundamentally, with the primes, **I am wanting to work out a way to reduce the e
 ## Thursday, 7th of November
 
 To me, this project reminds me of how success has different priorioties at different scales, and also how we tend to look at the ultra-successful for traits for their success, to think they scale to our level. This seems like an error-accumulation issue could occur, whereas we want to find an optimal "next step" for where weare. This feels related to the prime numbers we're encountering, where local properties do not marry up to the larger scale properties.
+
+## Tuesday, 12th of November
+
+Hello!
+
+I've been working on the ideas-side of the project, and doing a bit of experimenting. I've started a `principles` directory in the repo, in order to concretise some of the ideas. I've started with a `period_of_change_on_fittest_values.py`, to simply showcase the idea of the y-fitting, and a-fitting. This is still in progress.
+
+As well, I've replaced the `py_expression_eval` with a regular function, as well as wrapped Numba around this function since it uses Numpy. This has resulted in a 10-250x speed-up depending on the system being used for computing the result of the equation, as well as a 50% increase for the Y-fitter that I've tested so far.
+
+I am returning to the start, where we found the interesting A-fit and Y-fit pattern. As we defined above:
+
+- Y-fit has a bounded negative side.
+- A-fit has a bounded positive side.
+- The distribution of negative and positive runs are relatively known and predictable.
+
+If there is a way to bound the negative and the positive side, then there would be no need to worry about which side of the distribution we are in (positive or negative), since we know that the positive and negative component is bounded. This is a just a theory, but I also think it adds to our aim of reducing volatility and complexity.
