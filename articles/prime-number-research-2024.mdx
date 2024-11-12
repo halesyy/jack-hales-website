@@ -879,3 +879,10 @@ I am also getting frustrated with the complexity of the existing fitting functio
 
 To do this though, I might create a separate fitting function. I'll get the existing one working in the new class format, and then add in the other one. Some speed improvements may come, from being able to compute more values in bulk using Numpy and Numba.
 
+### Tweaker Update
+
+As I finish the day, I have no important results as of yet. I have, although, been working on the tweaker, and have written a lot of code and done a lot of testing. I've tested the "shotgun" approach, and it seems to be working - but still has a lot of bloat from the refactoring I have been doing. I thought it would be simple arithmetic, though there are quite a few functions interoping in order to help solve the problem.
+
+In this process, I had a thought: to look at the deltas of the shotgun series (shotgun: test 5 step sizes, and analyze the results). I wrote a script to test if the deltas are different with adjusted step sizes when adjusting, and they indeed are for the A-fitting. When Y-fitting - this is not the case! As we're adjusting the base logarithm. This can be factored into a separate "diff-optimisation" function, and I think the shotgun approach can be simplified a lot.
+
+Once done, I will be able to input expressions, as well as use a flexible format in order to fit variables - so I can start to look at the relationships between A&Y fitting (finding fittings for A and Y to the primes, if that exists), as well as test more and more variants of equations. I'll keep you up to date!
