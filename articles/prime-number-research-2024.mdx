@@ -866,3 +866,16 @@ I am returning to the start, where we found the interesting A-fit and Y-fit patt
 - The distribution of negative and positive runs are relatively known and predictable.
 
 If there is a way to bound the negative and the positive side, then there would be no need to worry about which side of the distribution we are in (positive or negative), since we know that the positive and negative component is bounded. This is a just a theory, but I also think it adds to our aim of reducing volatility and complexity.
+
+### Working On Tweaker
+
+I am working on an improved (DX - developer experience) tool for fitting equations. I often try to avoid using classes in engineering nowadays, but I am finding this a great use of using them to help model the complexity in the short-term. Once I complete the test, I will adjust to a functional approach if necessary. I've built it as a class which takes in a function, as well as a definition of variables. These variables can be floats (default values), they can also be LINEAR, or FITTING. Linear defines a linear series to be used (e.g. x = LINEAR, as it's 1, 2, 3, ... - this can be adjusted in the future to use other series), and FITTING indicates a value which is to be fit.
+
+For the current "fitting" function, I am only supporting a single fitting value.
+
+I am also getting frustrated with the complexity of the existing fitting function. It's fast, but I feel like I can remove some "fast" by restructuring it. I've asked GPT to help me, but it was useless (I didn't test too thoroughly, in honesty.) Some ideas for improving it, so it's more understandable, is to:
+
+> Use a lazy group evaluation: evaluate the step sizes we're currently on with a "shotgun" approach. Take the values for the next series of step sizes, then write an algorithm to interpret those values and decide on the direction to go.
+
+To do this though, I might create a separate fitting function. I'll get the existing one working in the new class format, and then add in the other one. Some speed improvements may come, from being able to compute more values in bulk using Numpy and Numba.
+
