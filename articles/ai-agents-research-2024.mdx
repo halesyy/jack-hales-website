@@ -16,21 +16,38 @@ The inputs conventionally involve a mix of a chaotic user-request, as well as co
 
 With a bit more rigidity - but the basic idea is encapsulated above.
 
-### Is an AI Agent necessary?
+### Is an AI Agent even necessary?
 
 This is an important aspect to review, before jumping into AI Agent world. To help, I will start with what I commonly do at work, as well as some unusual exceptions.
 
-- **Programming:** I am often taking ideas, and converting them into the code which is required to run those features.
+- **Programming:** I am often taking feature ideas or bug fixes, and converting them into the code which is required to resolve the given task.
 - **Emails:** I read and respond to a plethora of emails - some business-important, some functional, some documentative.
+- **Testing:** I am often trying to solve data pipelines by doing testing on components.
+- **Calling:** I am often calling individuals, to help install software, or diagnose problems in systems. <span style={{color: "red"}}>Not AI-Agent capable - within this current scope of initial review.</span>
+- **Meeting:** I meet with other individuals. The only axis of adjusting this, is to change requirements, and redirect meetings to emails, calls, or texts - as Naval Ravikant refers to. <span style={{color: "red"}}>Not AI-Agent capable.</span>
 
-### What LLMs are natively great for
+The above does not define with enough definition, what a given task involves. This has often been my problem with using AI - it's a series of semi-random occurrences.
 
-LLMs are great at parsing text, and has basically surplanted classical machine learning categorisation tasks completely. I'd summise that LLMs are great at "in-the-box" thinking, or potentially working with defined problem spaces. Say I ask a model to generate something superwild, and turn the temperature up, then put that into an "in-the-box" model - this might mimic some form of cross-domain creativity which humans often work within. But, this is just hand-waving I'm afraid - I will continue looking.
+I also don't think I will be able to "plan" the perfect agent. It'll have to evolve - naturally - by using it in the field. I will make a conscious effort to test the ideas, rather than just discuss them.
 
-Ask an LLM to tell you what you can make with ingredients. With current models, it will do phenomenally with existing recipies that exist - but not recommend anything unseen - this is expected.
+### What LLMs might be natively great for
 
-Ask an LLM to help you refactor some code - it will use well-known existing patterns. But, it will not stake it's career on some "thought" it had regarding a potentially better, unseen pattern, which could be tested and improve the system tenfold.
+LLMs are text parsers, and text-continuers. OpenAI has done a good job of separating the model, as well as the asker, so the models job is to step forward one more model response, then wait for user feedback.
 
-Ask an LLM to rank an idea - it will help you confirm it's plausability, and factor away potential risks to a point where you can take the leap - potentially devestatingly.
+Due to relying on training data, models think inside their training data - they think "in their box".
 
-(PLEASE NOTE: I am writing a lot of fluff. The above are just ideas I am putting down. To be revised!)
+Ask an LLM to:
+
+- Tell you what you can make with existing ingredients: It will do well and provide you existing recipies. It will not risk creating a new recipie.
+- Ask an LLM to refactor or assess some code: It will do it within existing principles, unless directed to do something else it can understand.
+- Ask an LLM to make a decision: It will consider in-box options.
+- Ask an LLM to classify some input based on a series of categories: It will do it as it believes.
+- Ask an LLM to simulate being something: It will do as it believes, mimicing what it believes that thing is.
+- Ask an LLM to adjust prose, mimic a style: It will do as it believes.
+
+These are high-level claims, and I hope you understand where I am coming from: **Models think inside their box**. This is OKAY! That is what they are made to do!
+
+(PLEASE NOTE: I am writing a lot of fluff here. The above is to be revised after I do some more work.)
+
+### Let's Build
+
