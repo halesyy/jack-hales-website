@@ -38,10 +38,10 @@ let IndexPage = ({ ...props }) => {
     return (
         <>
             <Head>
-                <title>Jack Hales - Tura Beach Software</title>
+                <title>Jack Hales - Engineer & Thinker</title>
                 <meta
                     name="description"
-                    content="Jack Hales is an Australian software engineer focussed on creativity hitting reality. Jack currently works as the CTO of Dataology, a data and software company."
+                    content="Jack Hales is an Australian software engineer who loves working with data creatively. Jack currently works as the CTO of Dataology, a data and software company in the Australian pharmaceutical space."
                     key="desc"
                 />
             </Head>
@@ -59,7 +59,7 @@ let IndexPage = ({ ...props }) => {
                     </div>
                 </Link>
                 <div className="text-center">
-                    Software Engineer from Australia 🇦🇺
+                    Software Engineer 🇦🇺
                 </div>
                 <hr className="my-4" />
                 {/* My socials: */}
@@ -98,7 +98,7 @@ let IndexPage = ({ ...props }) => {
                         <li>History 📜</li>
                         <li>Italy 🇮🇹</li>
                         <li><Link className="text-3xl" href="https://www.goodreads.com/user/show/113621720-jack-hales" target="_blank">Reading</Link></li>
-                        <li>Travelling 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭🇻🇳🇮🇳🇴🇲🇦🇪*🇮🇹*</li>
+                        <li>Travelling 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭🇻🇳🇮🇳🇴🇲🇦🇪🇮🇹</li>
                     </ul>
                 </div>
                 <hr className="mt-6 mb-4" />
