@@ -38,7 +38,7 @@ let IndexPage = ({ ...props }) => {
     return (
         <>
             <Head>
-                <title>Jack Hales - Engineer & Thinker</title>
+                <title>Jack Hales</title>
                 <meta
                     name="description"
                     content="Jack Hales is an Australian software engineer who loves working with data creatively. Jack currently works as the CTO of Dataology, a data and software company in the Australian pharmaceutical space."
