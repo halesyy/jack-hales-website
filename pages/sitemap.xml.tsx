@@ -16,6 +16,7 @@ function siteMap() {
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
          <url><loc>https://www.jackhales.com/</loc></url>
          <url><loc>https://www.jackhales.com/articles</loc></url>
+         <url><loc>https://www.jackhales.com/background-and-experience</loc></url>
          ${articleSitemaps.join("\n")}
       </urlset>
    `;
