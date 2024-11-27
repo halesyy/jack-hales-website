@@ -4,16 +4,16 @@ import { SmallContainer } from "components/medium/Container";
 function MostImpactfulBook() {
    return (
       <div className="bg-white rounded-lg shadow-xl hover:shadow-2xl duration-300 p-6 my-4">
-         <div className="flex items-center gap-5">
+         <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
             <img
                src="/black-swan-book.jpg"
                alt="The Black Swan by Nassim Taleb"
-               className="w-32 h-auto rounded-md shadow-sm"
+               className="w-32 h-auto rounded-md shadow-sm mx-auto md:mx-0"
             />
-            <div className="space-y-2">
-               <h3 className="text-xl font-semibold">The Black Swan</h3>
-               <p className="text-gray-600 text-sm pb-2">by Nassim Nicholas Taleb</p>
-               <div className="flex flex-wrap gap-2 my-2">
+            <div className="space-y-2 w-full">
+               <h3 className="text-xl font-semibold text-center md:text-left">The Black Swan</h3>
+               <p className="text-gray-600 text-sm pb-2 text-center md:text-left">by Nassim Nicholas Taleb</p>
+               <div className="flex flex-wrap justify-center md:justify-start gap-2 my-2">
                   <Chip size="sm" variant="flat">Finance</Chip>
                   <Chip size="sm" variant="flat">Risk Analysis</Chip>
                   <Chip size="sm" variant="flat">Empiricism</Chip>
@@ -112,7 +112,7 @@ function PlatformIntegrations() {
             <Chip size="sm" variant="flat">Rohlig</Chip>
          </div>
          <div className="flex flex-wrap items-center gap-2 my-2">
-            <h4 className="text-lg font-semibold">Other:</h4>
+            <h4 className="text-lg font-semibold">E-Commerce & CRM:</h4>
             <Chip size="sm" variant="flat">Shopify</Chip>
             <Chip size="sm" variant="flat">Salesforce</Chip>
          </div>
