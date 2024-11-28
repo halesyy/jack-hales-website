@@ -1,5 +1,6 @@
 import { Chip, Divider } from "@nextui-org/react";
 import { SmallContainer } from "components/medium/Container";
+import Head from "next/head";
 
 function MostImpactfulBook() {
    return (
@@ -239,16 +240,21 @@ function ReachOut() {
 
 function JackHalesSkillsheet() {
    return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-         <div className="max-w-3xl mx-auto">
-            <MostImpactfulBook />
-            <LanguageExposure />
-            <PlatformIntegrations />
-            <TradingAndBetting />
-            <LargeProjects />
-            <ReachOut />
+      <>
+         <Head>
+            <title>Background and Experience | Jack Hales</title>
+         </Head>
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+               <MostImpactfulBook />
+               <LanguageExposure />
+               <PlatformIntegrations />
+               <TradingAndBetting />
+               <LargeProjects />
+               <ReachOut />
+            </div>
          </div>
-      </div>
+      </>
    );
 }
 
