@@ -248,9 +248,9 @@ function JackHalesSkillsheet() {
             <div className="max-w-3xl mx-auto">
                <MostImpactfulBook />
                <LanguageExposure />
+               <LargeProjects />
                <PlatformIntegrations />
                <TradingAndBetting />
-               <LargeProjects />
                <ReachOut />
             </div>
          </div>
