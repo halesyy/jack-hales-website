@@ -17,6 +17,7 @@ function siteMap() {
          <url><loc>https://www.jackhales.com/</loc></url>
          <url><loc>https://www.jackhales.com/articles</loc></url>
          <url><loc>https://www.jackhales.com/background-and-experience</loc></url>
+         <url><loc>https://www.jackhales.com/software-engineers-guide-exploring-oman-top-travel-tips-itinerary</loc></url>
          ${articleSitemaps.join("\n")}
       </urlset>
    `;

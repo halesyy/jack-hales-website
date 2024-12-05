@@ -26,6 +26,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
+    "react-social-media-embed": "^2.5.17",
     "tailwind-rn": "^3.0.1",
     "tls": "0.0.1"
   },
