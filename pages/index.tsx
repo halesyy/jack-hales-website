@@ -99,7 +99,7 @@ let IndexPage = ({ ...props }) => {
                         <li>Italy 🇮🇹</li>
                         <li><Link className="text-3xl" href="https://www.goodreads.com/user/show/113621720-jack-hales" target="_blank">Reading</Link></li>
                         <li>Travelling 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭🇻🇳🇮🇳🇴🇲🇦🇪🇮🇹</li>
-                        <li><Link href="/software-engineers-guide-exploring-oman-top-travel-tips-itinerary" className="text-3xl">Oman Guide</Link></li>
+                        <li><Link href="/software-engineers-guide-exploring-oman-top-travel-tips-itinerary" className="text-3xl">Oman Guide 🇴🇲</Link></li>
                     </ul>
                 </div>
                 <hr className="mt-6 mb-4" />
