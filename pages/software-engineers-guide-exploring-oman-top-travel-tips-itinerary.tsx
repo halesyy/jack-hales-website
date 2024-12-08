@@ -113,7 +113,7 @@ function OmanTravelTips() {
                <div className="text-lg leading-relaxed text-gray-700 mb-6">
                   I truly recommend checking out Oman. This is not an advertisement for Hisham and Luoy at Oman Tours, I just love them! Visit them on Instagram below, and view my shared post I made with Hisham and Luoy. Thanks to them for showing nothing but incredible hospitality and big hearts!
                </div>
-               <div>
+               <div className="text-center">
                   <Link
                      href="https://www.instagram.com/oman___tours/"
                      target="_blank"
