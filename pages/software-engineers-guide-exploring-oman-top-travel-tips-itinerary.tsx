@@ -128,8 +128,8 @@ function OmanTravelTips() {
                <div className="my-6">
                   <InstagramEmbed
                      url="https://www.instagram.com/p/C8eQVlTgaS_/"
-                     width={450}
-                     className="mx-auto"
+                     width="100%"
+                     className="mx-auto max-w-[450px]"
                   />
                </div>
             </div>
