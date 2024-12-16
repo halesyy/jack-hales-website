@@ -112,3 +112,25 @@ The article argues that "Entity Resolution" is a core concept which helps solve 
 It goes on to illustrate that the goal is to reach a "Entity Resolved Knowledge Graphs" (ERKG), which is a data graph which has been collapsed into a knowledge graph where duplicate entities are removed.
 
 **To bring this back to simpler language**, **knowledge graphs** are **smarter data graphs**, where **entity resolution is used** to **attribute graph nodes**, and collapse and split similar or different data points to **find new relationships**.
+
+## 16th of December, 2024
+
+In the last 8 days since I mentioned my usage of Cursor, my diving into A.I. has made more progress. I've been a A.I.-doomer in the past, though I now feel quite differently about it. Having more experience with the latest tooling and latest approaches shows me the weaknesses, though I now see them as things that will be improved over time. 
+
+### "The Next Big Model"
+
+One example of how my thinking has changed, is that many people are focussed on the **next big model** to be created from OpenAI, Anthropic, so-forth. Although this excites me, I am also excited for the constant "well-rounding" and enhancements to logical thinking that can be made **now**, and in the near-future, to remove the rough edges for practitioners.
+
+Put it this way: if there is a 3-5% "rough edge" in today's models (4o), increasing the size of the model will only increase the surface area of these rough edges. As we don't know how these models work internally, this can create a cascade of logical or technical errors in the future. With this in mind, I see a great path forward for refinement and distillation, then leading into a natural scaling.
+
+### Classifying
+
+I've been using a lot of the latest A.I. tooling for classifying with our company's work recently. I've practices with countless prompting methods, with frustrating and exciting results. Both the determinism and non-determinism is fascinating to me in how we're going to wrangle these into the future.
+
+I'm playing around with vectorising at the moment as another angle for classifying. This is going well - using LLM's to expand the content of the vector item, and then doing lookups on expanded item descriptions to try to marry them up.
+
+### Functional or OOP for LLM tool design?
+
+I've also made some updates to `microai` in terms of creating a really basic representation of a `Chain`, using OOP and builder patterns. I then replaced some old chain code, and noticed it was remarkably metter. I'd been on a more pro-function bend recently with Python, though forcing myself to try LLM interaction using functions, then moving to OOP+Builder pattern, has shown me that it is absolutely the better pattern/paradigm to use when building tools that interact with LLMs.
+
+I will add that I really like the dynamic representation of a chain within a builder pattern. I will experiment with other functions, but this is working well for now while I experiment organically.
