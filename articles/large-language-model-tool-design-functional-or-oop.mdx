@@ -44,7 +44,12 @@ Then, **Object Design** is employed for the chain representations with a **Build
 ```py
 chain = GPTChain(model="gpt-3.5-turbo")
 description = chain \
-    .add_system_content("You are a e-commerce category definer. You will take in a category name, and describe it in a way that is easy to understand. Describe products in the category, and the key features and traits of the products in the category.") \
+    .add_system_content("You are a e-commerce category 
+                        definer. You will take in a category 
+                        name, and describe it in a way that is easy 
+                        to understand. Describe products in the 
+                        category, and the key features and traits 
+                        of the products in the category.") \
     .add_user_content(f"Category: {category}") \
     .invoke_assistant_chain() \
     .output_content_str()
