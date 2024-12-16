@@ -1,0 +1,71 @@
+---
+title: "Large Language Model Tool Design: Functional or OOP?"
+description: "Exploring the paradigms of functional and object-oriented programming in the context of designing tools and chains for large language models, and considering which paradigm best suits this purpose."
+date: "16 December 2024"
+---
+
+LLM's are here to stay. They are the most popular method of interacting with A.I. at the current moment. This may change, but I'd like to share some of my personal thoughts on ways to programmatically interact with today's LLM's, in order to encourage new, exciting development ideas. Paradigms are a broad word, but they describe general ways to interact with programming languages. Some programming languages like Python are very broad and allow the user to work within the bounds of many different paradigms. The paradigms we're going to focus on in this article are: **Object-Oriented Programming**, and **Functional Programming** (function biased programming).
+
+## Chains
+
+Before proceeding into the paradigms, a quick explanation on chains should be provided. A chain is **a logical sequence of LLM prompts**. A broad example of a chain might be how you interact with ChatGPT: by asking the model something, it replying, then you asking it a follow-up. It's important that we use a flexible, maintainable system for representing chains in programming, so we can spend more time tweaking the prompts than understanding code.
+
+## Paradigms
+
+### Functional Programming
+
+When I refer to "functional programming" (FP) in this article, I am not speaking about it in a purist way. The purist definition of functional programming would be to attempt to program with immutability and reduce side-effects. When discussing FP, I am referring defining simple functions which can be piped together to create the powerful chain-effect of LLM's.
+
+To be able to facilitate this, a `history` must be defined outside of the functions which is passed into the function, alongside a `model` to decide a model, as well as `invoke` methods.
+
+### Object-Oriented Programming (OOP)
+
+The other way to build a chain would be to use Object-Oriented Programming to represent this. In a language like Python, this allows us to internalise the `history`, `model`, and `invoke` within the single object. We simply define a class, set-up some types, and we're able to "stack" this information into the model before we try to invoke the model to reply to us.
+
+### Distinctions
+
+FP and OOP look great at smaller scales. As we start to enlarge, the typical issues that arise are are that FP creates a **cleaner-yet-sparce environment**, whereas OOP creates a **centralised-yet-complex environment**. Some of the failings of these paradigms are as follows:
+
+- **FP:** Everything looks tidy, yet our names start to look the same, blend in, and we're moving across files in order to understand the workflow. State could be controlled in a small space which helps us track down issues, but we're spending more time architecting at scale sometimess.
+- **OOP:** If the project grows without targetted refactors or is missing class-to-function conversions (removing class methods that should just be logical functions), we can start to get into solving larger file issues by adding inheritance. It feels good when writing, but quickly becomes a headache as each object wants an attribute from another object.
+
+There is no magnum opus paradigm to programming. It's always domain and business-logic specific. But, we can often blend paradigms and patterns to help improve our developer experience.
+
+### Blending
+
+The case for **blending these paradigms** is to use each pattern where it excels. FP excels with tight logical control and reuse, whereas OOP excels with state management at a small-medium scale with less multivariate side-effects.
+
+I've extensively tried both, and with `microai`, my personal experimental A.I. and LLM tools, I've got a blend of OOP and FP in the codebase:
+
+**Functional Design** for the atomic interaction with models, like OpenAI's ChatGPT. These functions are simple, and take in message history and model, then helpfully output a response from the model (in a raw OpenAI response or a formatted type).
+
+Then, **Object Design** is employed for the chain representations with a **Builder Pattern** to make building easy and dynamic. Simply instantiate the chain, then build on it, and output format it if you want:
+
+```py
+chain = GPTChain(model="gpt-3.5-turbo")
+description = chain \
+    .add_system_content("You are a e-commerce category definer. You will take in a category name, and describe it in a way that is easy to understand. Describe products in the category, and the key features and traits of the products in the category.") \
+    .add_user_content(f"Category: {category}") \
+    .invoke_assistant_chain() \
+    .output_content_str()
+```
+
+### Developer Experience
+
+In terms of building a tool, I think this strikes a good balance. A developer can:
+
+- Easily invoke models quickly, even in a REPL, using the `chat` function for a quick interaction.
+- Build chains using the functions if wanted.
+- Use the OOP chain model to enhance chain representation if wanted.
+- Use the builder pattern if wanted to enhance code readability.
+- Type consistency can be used within multi-model approaches (OpenAI, Anthropic) through all layers.
+
+### Conclusion
+
+When building LLM tools, I believe the best approach is to blend paradigms rather than strictly adhering to one. Functional programming provides clean, reusable components for core model interactions, while object-oriented patterns can effectively manage state and provide intuitive builder interfaces for chains.
+
+The key is to use each paradigm where it excels - FP for atomic operations and logical control, OOP for state management and developer ergonomics. This hybrid approach allows us to create tools that are both powerful and pleasant to use.
+
+My experience building `microai` to date has shown that this balanced approach leads to a codebase that is maintainable, extensible, and developer-friendly. It enables quick prototyping through functional components while supporting more complex chain-based workflows through object-oriented patterns.
+
+The end goal should be creating tools that empower developers to work effectively with LLMs, whether through simple one-off interactions or complex multi-step chains. By thoughtfully combining paradigms, we can build tools that achieve this goal while remaining clean and maintainable as they grow.

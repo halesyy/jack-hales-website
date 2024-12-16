@@ -3,7 +3,10 @@
 const ARTICLE_IDS: string[] = [ 
    "prime-number-research-2022",
    "prime-number-research-2024",
-   "software-topology"
+   "software-topology",
+   "ai-agents",
+   "ai-agents-research-2024",
+   "large-language-model-tool-design-functional-or-oop"
 ];
 
 function siteMap() {
