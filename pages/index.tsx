@@ -89,25 +89,25 @@ let IndexPage = ({ ...props }) => {
                 </div>
                 <hr className="my-4" />
                 <div>
-                    <div className="mb-2">
+                    <div className="mb-2 text-xl font-bold">
                         Interests:
                     </div>
-                    <ul className="ml-6 list-disc">
+                    <ul className="ml-12 list-disc">
                         <li>Bush walks 🥾</li>
                         <li>Music 🎸 🥁 🎹</li>
                         <li>History 📜</li>
                         <li>Italy 🇮🇹</li>
                         <li><Link className="text-3xl" href="https://www.goodreads.com/user/show/113621720-jack-hales" target="_blank">Reading</Link></li>
                         <li>Travelling 🇫🇯🇳🇵🇸🇬🇺🇸🇮🇩🇹🇭🇻🇳🇮🇳🇴🇲🇦🇪🇮🇹</li>
-                        <li><Link href="/software-engineers-guide-exploring-oman-top-travel-tips-itinerary" className="text-3xl">Oman Guide 🇴🇲</Link></li>
+                        <li><Link href="/software-engineers-guide-exploring-oman-top-travel-tips-itinerary" className="text-3xl">Oman: Read My Guide 🇴🇲</Link></li>
                     </ul>
                 </div>
                 <hr className="mt-6 mb-4" />
                 <div>
-                    <div className="mb-2">
+                    <div className="mb-2 text-xl font-bold">
                         I create:
                     </div>
-                    <ul className="ml-6 list-disc">
+                    <ul className="ml-12 list-disc">
                         <li>Websites, Web-apps</li>
                         <li>Backends</li>
                         <li>Software</li>
@@ -119,10 +119,10 @@ let IndexPage = ({ ...props }) => {
                 </div>
                 <hr className="mt-6 mb-4" />
                 <div>
-                    <div className="mb-2">
+                    <div className="mb-2 text-xl font-bold">
                         Programming, Technical Skills:
                     </div>
-                    <ul className="ml-6 list-disc">
+                    <ul className="ml-12 list-disc">
                         <li>Python, Flask, FastAPI, Typed Python</li>
                         <li>JavaScript, TypeScript, Next, React, Node</li>
                         {/* <li>Rust</li> */}
@@ -133,10 +133,10 @@ let IndexPage = ({ ...props }) => {
                 </div>
                 <hr className="mt-6 mb-6" />
                 <div>
-                    <div className="mb-2">
+                    <div className="mb-2 text-xl font-bold">
                         Projects of Interest:
                     </div>
-                    <ul className="ml-6 list-disc">
+                    <ul className="ml-12 list-disc">
                         <li>
                             <ModalShorthand text="Pharma Portal - Pharmaceuticals" modalContent={<PharmaPortalProject />} />
                         </li>
