@@ -120,12 +120,12 @@ let IndexPage = ({ ...props }) => {
                 <hr className="mt-6 mb-4" />
                 <div>
                     <div className="mb-2 text-xl font-bold">
-                        Programming, Technical Skills:
+                        Programming & Technical Skills:
                     </div>
                     <ul className="ml-12 list-disc">
                         <li>Python, Flask, FastAPI, Typed Python</li>
                         <li>JavaScript, TypeScript, Next, React, Node</li>
-                        {/* <li>Rust</li> */}
+                        <li>Mathematics: Distributions (Normal, Mandelbrotian), Calculus, Statistics</li>
                     </ul>
                     <div className="text-base mt-2 text-gray-400">
                         (MySQL, MongoDB, Linux, Docker, Vercel, Firebase, GCP, App Engine, AWS, Tailwind)
