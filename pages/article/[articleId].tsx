@@ -99,12 +99,22 @@ export default function ArticlePage({ data, content }): React.ReactNode {
          }}>
             &larr; Back
          </div>
-         <div className="text-center">
-            <div className="text-3xl font-bold">
-               {data.title}
-            </div>
-            <div className="text-gray-400 mb-10">
-               {data.date}
+         <div className={classNames(
+            "text-center bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100",
+            "rounded-2xl shadow-xl mt-4"
+         )}>
+            <div className="w-ful p-12 space-y-4">
+               <div className="text-3xl">
+                  {data.title}
+               </div>
+               {data.description && (
+                  <div className="text-foreground/70">
+                     {data.description}
+                  </div>
+               )}
+               <div className="text-foreground/70">
+                  By Jack Hales | {data.date}
+               </div>
             </div>
          </div>
          <div className="mdx-content px-2">
