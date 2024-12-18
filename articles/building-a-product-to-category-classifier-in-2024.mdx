@@ -50,6 +50,10 @@ Let's look at a few examples.
 
 Great! Across the 3,832 items, there was a match of 3,698 with these sort of quality answers. There were then a small group of unmatched items, and ~100 items which matched to Other (through the RAG). This is a match rate of **96.5%** over 87 different categories. Nice!
 
+### Technical Summary
+
+To classify uncategories products to domain-specific categories, I ended up using a **LLM chain to expand details about the categories**, an **LLM chain to expand the description of the product's**, then **created embedding vectors for each dataset**. I then **did nearest-neighbours vector search** locally. With the **top 5 closest results**, I inputted this information into another **separate LLM chain to reason about multiple best, then single best category**.
+
 ### Takeaways
 
 The biggest takeaway for me with this project is that understanding the principles of these new tools helps a problem-solver piece together creative solutions for domain problems. Nothing innately new has been done here, but bridging the divide between the theory and practice has been done to solve a real bottleneck problem.
