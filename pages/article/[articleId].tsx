@@ -7,6 +7,7 @@ import { getPost, listArticles } from "lib/articles";
 import { Divider } from "@nextui-org/react";
 import classNames from "classnames";
 import Head from "next/head";
+import remarkGfm from "remark-gfm";
 
 /**
  * Returns the paths which can be statically rendered.
@@ -30,7 +31,11 @@ export async function getStaticProps({ params }) {
    const post = getPost(params.articleId);
    if (option.isSome(post)) {
       const { data, content } = option.toNullable(post);
-      const mdxForClient = await serialize(content);
+      const mdxForClient = await serialize(content, {
+         mdxOptions: {
+            remarkPlugins: [remarkGfm]
+         }
+      });
       return {
          props: {
             data,
@@ -103,20 +108,23 @@ export default function ArticlePage({ data, content }): React.ReactNode {
             </div>
          </div>
          <div className="mdx-content px-2">
-            <MDXRemote {...content} components={{
-               p: ({ children }) => (
-                  <div className="my-6 text-xl text-justify">
-                     {children}
-                  </div>
-               ),
-               h1: headerComponent(1),
-               h2: headerComponent(2),
-               h3: headerComponent(3),
-               h4: headerComponent(4),
-               ul: ({ children }) => (<ul className="list-disc list-inside">{children}</ul>),
-               li: ({ children }) => (<li className="text-xl">{children}</li>),
-               strong: ({ children }) => (<strong>{children}</strong>)
-            }} />
+            <MDXRemote 
+               {...content} 
+               components={{
+                  p: ({ children }) => (
+                     <div className="my-6 text-lg text-justify">
+                        {children}
+                     </div>
+                  ),
+                  h1: headerComponent(1),
+                  h2: headerComponent(2),
+                  h3: headerComponent(3),
+                  h4: headerComponent(4),
+                  ul: ({ children }) => (<ul className="list-disc list-inside">{children}</ul>),
+                  li: ({ children }) => (<li className="text-xl">{children}</li>),
+                  strong: ({ children }) => (<strong>{children}</strong>)
+               }} 
+            />
          </div>
       </MediumContainer>
    )

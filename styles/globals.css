@@ -1,8 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;800&family=Pacifico&family=Oswald&family=Roboto&family=Barriecito&family=Open+Sans&family=Ubuntu&display=swap'); */
 
+/* Import a serif font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Merriweather', serif;
+}
 
 .modal-content p {
    @apply py-2;
@@ -16,6 +23,54 @@
    @apply mx-auto;
 }
 
+.mdx-content p {
+    font-family: 'Merriweather', serif;
+    line-height: 1.6; /* Improve readability */
+    font-size: 0.8rem; /* Adjust size as needed */
+}
+
 blockquote {
    @apply p-4 px-10 bg-foreground-100/80 rounded-r-2xl border-l-2;
 }
+
+.mdx-content ol {
+    font-family: 'Merriweather', serif; /* Match the font with the rest of the content */
+    margin: 1em 0; /* Add vertical spacing */
+    padding-left: 1.5em; /* Indent the list */
+    line-height: 1.8; /* Improve readability */
+    list-style-type: decimal; /* Ensure numbers are displayed */
+}
+
+.mdx-content ol li {
+    margin-bottom: 0.5em; /* Add space between list items */
+}
+
+table {
+    @apply min-w-full bg-white border-collapse;
+}
+
+thead {
+    @apply bg-gray-100;
+}
+
+th, td {
+    @apply border border-gray-200 px-4 py-2 text-left;
+}
+
+th {
+    @apply font-medium text-gray-600;
+}
+
+tbody tr:nth-child(even) {
+    @apply bg-gray-50;
+}
+
+tbody tr:hover {
+    @apply bg-gray-100;
+}
+
+/* Optional: Add some spacing around the table */
+.table-container {
+    @apply my-8;
+}
+

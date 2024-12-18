@@ -1,4 +1,3 @@
-
 import classnames from "classnames"
 
 export let WideContainer = ({className, style, children, ...props}) => {
@@ -26,7 +25,7 @@ export let SmallContainer = (props) => {
 export let MediumContainer = (props) => {
 	return (
 		<div className={classnames(
-			"px-2 sm:px-20 md:px-40 lg:px-64 xl:max-w-[1200px] xl:mx-auto   mb-12",
+			"px-2 sm:px-20 md:px-40 lg:px-64 xl:max-w-7xl xl:mx-auto mb-12",
 			props.className
 		)} style={props.style || {}}>
 			{props.children}
