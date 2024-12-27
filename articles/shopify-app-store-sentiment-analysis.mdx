@@ -1,0 +1,45 @@
+---
+title: "Shopify"
+description: "WIP - doing sentiment analysis on Shopify."
+date: "27 December 2024"
+---
+
+1. Are marketplaces the right platform for me to build on, and express my talents?
+2. I want to "understand the facts" in a Navil Ravikant way, and employ an LLM to do analysis on app stores.
+
+It looks like data analysis has fundamentally changed with the introduction of LLMs, and the knowledge has not yet been solidifed. It exists as a liquid object suspended in the experimentation of developers who have new and old experiences.
+
+As someone who's done a lot of web-scraping, as well as data-analysis, it feels as if the tool count has increased tenfold: centering creativity over everything.
+
+Take a look at an open-ended project: **Analyzing the "Shopify App Store"**. It's straightforward and **in the robots.txt** to crawl, and you can create any goal you want. Go do more projects which are open-ended, and sharpen your skills - it's great. 
+
+Take a standard "data analysis" article's data-analysis approach to this. Go read MeetAntishi's analysis of the app store: [https://meetanshi.com/blog/shopify-app-store-statistics/](https://meetanshi.com/blog/shopify-app-store-statistics/). This is a **great** article, and his analysis is concrete. This is a standard approach to representing the statistics, but let's try using some **new** skills.
+
+### Approach
+
+Instead of the standard scraping approach of data mining and crawling pages and collecting structured data, we can crawl pages and **collect unstructured data**. This allows us to spend less effort up-front, save the raw pages locally, and parse them in separate batches. What I enjoy in this is there's more time to spend thinking about creative ways to use this data.
+
+Let's say we've: 
+
+- Sourced the `sitemap.xml`, downloaded it, parsed the partner listings URLs, then crawled them all and saved their HTML locally.
+- Load each page into BS4's BeautifulSoup, then parse the app listings out of the specific pages.
+- Load a given partner's app listing, and locate the pricing tab element, description element, reviews element. Just grab the text in the element, and remove whitespace. Save this parsed data as an object.
+
+E.g input [Bundles and Upsell by PickyStory](https://apps.shopify.com/product-kits-bundles-pickystory), and get this out:
+
+![PickStory Unstructured Data](/shopify-app-store/pickstory-text.png)
+
+This is structured unstructured data. Nothing new, nothing scary.
+
+We're able to then input these data points into chains, which can infer out other details about the app store element to find out key information to contrast to others.
+
+### Research
+
+My writing style is hard to understand. I genuiney try my hardest to make it understandable, and in real life I am a sociable and understandable person. I may have missed a lesson or didn't pay attention along the way somewhere - but I enjoy writing, and hope to get better and better. I need to do more editing of my writing, but at this stage I just want to communicate what I am working on without it being a big drag of my time in researching.
+
+So with that in mind: I will provide information I extract from this **"new"** analysis approach, in sequence.
+
+### New Analayis
+
+It's December 2024. There are a lucky 12,001 total Shopify App Store listings.
+
