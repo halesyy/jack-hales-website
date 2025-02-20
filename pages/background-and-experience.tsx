@@ -243,6 +243,11 @@ function JackHalesSkillsheet() {
       <>
          <Head>
             <title>Background and Experience | Jack Hales</title>
+            <meta name="description" content="Jack Hales' background and experience in software development, trading, and platform integrations." />
+            <meta property="og:title" content="Background and Experience | Jack Hales" />
+            <meta property="og:description" content="Jack Hales' background and experience in software development, trading, and platform integrations." />
+            <meta property="og:image" content="https://jackhales.com/jack-hales-picture-harbour.jpg" />
+            <meta property="og:url" content="https://jackhales.com/background-and-experience" />
          </Head>
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
