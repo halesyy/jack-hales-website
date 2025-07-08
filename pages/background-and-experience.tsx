@@ -12,6 +12,9 @@ function MostImpactfulBook() {
                className="w-32 h-auto rounded-md shadow-sm mx-auto md:mx-0"
             />
             <div className="space-y-2 w-full">
+               <div className="text-sm text-gray-600">
+                  Most Impactful Book
+               </div>
                <h3 className="text-xl font-semibold text-center md:text-left">The Black Swan</h3>
                <p className="text-gray-600 text-sm pb-2 text-center md:text-left">by Nassim Nicholas Taleb</p>
                <div className="flex flex-wrap justify-center md:justify-start gap-2 my-2">
@@ -251,11 +254,11 @@ function JackHalesSkillsheet() {
          </Head>
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-               <MostImpactfulBook />
                <LanguageExposure />
                <LargeProjects />
                <PlatformIntegrations />
                <TradingAndBetting />
+               <MostImpactfulBook />
                <ReachOut />
             </div>
          </div>

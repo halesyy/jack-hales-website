@@ -31,8 +31,11 @@ function Header() {
             </div>
             <Divider className="my-2 mt-3 w-12 mx-auto" />
             <div className="opacity-75 flex flex-wrap gap-3 justify-center">
-               <Link href="/articles" as={NextLink}>Articles</Link>
+               <Link href="/articles" as={NextLink}>Articles</Link> 
+               <span className="opacity-75">—</span>
                <Link href="/background-and-experience" as={NextLink}>Background & Experience</Link>
+               <span className="opacity-75">—</span>
+               <Link href="/machine-learning" as={NextLink}>Machine Learning</Link> 
             </div>
          </div>
       </>

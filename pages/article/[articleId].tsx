@@ -117,7 +117,7 @@ export default function ArticlePage({ data, content }): React.ReactNode {
                </div>
             </div>
          </div>
-         <div className="mdx-content px-2">
+         <div className="mdx-content px-2 pt-8">
             <MDXRemote 
                {...content} 
                components={{
