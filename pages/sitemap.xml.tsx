@@ -6,7 +6,7 @@ const ARTICLE_IDS: string[] = [
    "software-topology",
    "ai-agents",
    "ai-agents-research-2024",
-   "large-language-model-tool-design-functional-or-oop"
+   "large-language-model-tool-design-functional-or-oop",
 ];
 
 function siteMap() {
@@ -18,6 +18,7 @@ function siteMap() {
    return `<?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
          <url><loc>https://www.jackhales.com/</loc></url>
+         <url><loc>https://www.jackhales.com/machine-learning</loc></url>
          <url><loc>https://www.jackhales.com/articles</loc></url>
          <url><loc>https://www.jackhales.com/background-and-experience</loc></url>
          <url><loc>https://www.jackhales.com/software-engineers-guide-exploring-oman-top-travel-tips-itinerary</loc></url>
