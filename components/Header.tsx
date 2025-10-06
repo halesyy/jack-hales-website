@@ -7,7 +7,9 @@ function Header() {
    return (
       <>
          <div className={classnames(
-            "m-4 mt-6 py-4 rounded-xl text-center relative overflow-hidden"
+            // "m-4 mt-6 py-4",
+            "p-4",
+            "rounded-xl text-center relative overflow-hidden"
          )}>
             <BackgroundBlobs />
             <div className="relative z-10">
