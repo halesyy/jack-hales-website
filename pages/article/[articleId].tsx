@@ -95,12 +95,13 @@ export default function ArticlePage({ data, content }): React.ReactNode {
          </Head>
          <Divider className="my-8 bg-gray-200/50" />
          <div className="text-blue-100 px-2 hover:text-blue-300 cursor-pointer mt-4" onClick={() => {
-            window.history.back();
+            // window.history.back();
+            window.location.href = "/articles";
          }}>
-            &larr; Back
+            &larr; Articles
          </div>
          <div className={classNames(
-            "text-center bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100",
+            "text-center bg-gradient-to-br from-pink-200/50 via-purple-100/50 to-blue-200/50",
             "rounded-2xl shadow-xl mt-4"
          )}>
             <div className="w-ful p-12 space-y-4">
@@ -122,7 +123,7 @@ export default function ArticlePage({ data, content }): React.ReactNode {
                {...content} 
                components={{
                   p: ({ children }) => (
-                     <div className="my-6 text-lg text-justify">
+                     <div className="my-6 text-lg">
                         {children}
                      </div>
                   ),

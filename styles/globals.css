@@ -26,7 +26,7 @@ body {
 .mdx-content p {
     font-family: 'Merriweather', serif;
     line-height: 1.6; /* Improve readability */
-    font-size: 0.8rem; /* Adjust size as needed */
+    /* font-size: 0.8rem; Adjust size as needed */
 }
 
 blockquote {
